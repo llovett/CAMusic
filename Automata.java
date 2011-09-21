@@ -43,8 +43,8 @@ public class Automata {
 			for (int j=0; j<c; j++)
 				cells[i][j] = new Cell(parent, j, i);
 
-		Cell.setSize((int)Math.floor((double)w/c),
-				(int)Math.floor((double)h/r));
+//		Cell.setSize((int)Math.floor((double)w/c),
+//				(int)Math.floor((double)h/r));
 
 		
 		diagonals = true;
@@ -254,8 +254,7 @@ public class Automata {
 		// Apply the automaton rules
 		applyRules();
 
-		// Lock in the future generation for the cells and
-		// render each cell
+		// Lock in the future generation for the cells
 		for (Cell[] row : cells)
 			for (Cell c : row) {
 				c.confirmState();
