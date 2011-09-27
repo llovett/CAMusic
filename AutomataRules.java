@@ -11,10 +11,13 @@ import java.util.Collection;
 
 public interface AutomataRules {
 
-	public static final int CELL_AGE = -1;
-	public static final int CELL_BIRTH = -2;
-	public static final int CELL_DEATH = -3;
-	
-	public int apply(Cell target, Collection<Cell> neighbors);
+    public static final int CELL_AGE = -1;
+    public static final int CELL_BIRTH = -2;
+    public static final int CELL_DEATH = -3;
+    public static final int CELL_STASIS = -4;
 
+    public int apply(Cell target, Collection<Cell> neighbors);
+    public int getMaxCellState();
+    public void setMaxCellState(int state);
+    
 }

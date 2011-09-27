@@ -30,6 +30,7 @@ public class CAMusicWrapper extends Frame {
 		cam.init();
 		cam.setup();
 
+		setResizable(false);
 		setMinimumSize(new Dimension(
 				cam.getWidth(),
 				cam.getHeight())
