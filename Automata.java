@@ -32,13 +32,15 @@ public class Automata {
     private AutomataRules rules;
     // Title of this automaton, can be useful for sending OSC messages
     private String title;
-
+    private int ID; // Faster way to do identification, rather than with string
+    private static int ID_counter = 0;
+    
     // Array of how many cells are in what state. This can be used to do
     // other interesting calculations by the user. Storing this information
     // in an array here allows us to supply this information in constant time.
     int[] stateCounts;
     
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title) {
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title, int ID) {
 	this.parent = parent;
 	this.r = r;
 	this.c = c;
@@ -46,6 +48,7 @@ public class Automata {
 	this.h = h;
 	this.rules = rules;
 	this.title = title;
+	this.ID = ID;
 	
 	stateCounts = new int[rules.getMaxCellState()+1];
 	Arrays.fill(stateCounts, 0);
@@ -66,8 +69,16 @@ public class Automata {
 		
     }
 
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title) {
+	this(parent, r, c, rules, title, ID_counter++);
+    }
+
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, int ID) {
+	this(parent, r, c, rules, "", ID);
+    }
+    
     public Automata(PApplet parent, int r, int c, AutomataRules rules) {
-	this(parent, r, c, rules, "");
+	this(parent, r, c, rules, "", ID_counter++);
     }
     
     /**
@@ -206,8 +217,16 @@ public class Automata {
 	return title;
     }
 
+    public int getID() {
+	return ID;
+    }
+
     public void setTitle(String title) {
 	this.title = title;
+    }
+
+    public void setID(int ID) {
+	this.ID = ID;
     }
 
     /**
@@ -264,9 +283,10 @@ public class Automata {
 		switch(result) {
 		case AutomataRules.CELL_AGE:
 		    //target.setAlive(true);
-		    stateCounts[target.getState()]--;
-		    target.setState(target.getState()+1);
-		    stateCounts[target.getState()+1]++;
+		    int state = target.getState();
+		    stateCounts[state]--;
+		    target.setState(state+1);
+		    stateCounts[state+1]++;
 		    break;
 		case AutomataRules.CELL_BIRTH:
 		    //		    target.setAlive(true);

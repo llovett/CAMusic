@@ -18,13 +18,26 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 
     // Private constants
     private static final int MOUSE_WHEEL_ADJUST_AMNT = 20;
-    private static final int OSC_PORT_RCV = 8000;
-    private static final int OSC_PORT_SEND = 8001;
+    private static final int OSC_PORT_RCV = 8001;
+
+    // Identify Automata by number
+    private static final int LIFE1 = 0;
+    private static final int LIFE2 = 1;
+    private static final int LIFE3 = 2;
+    private static final int CONTOUR = 3;
+    
+    // Automaton 1-3 UDP ports, to be listened to by MaxMSP
+    private static final int OSC_PORT_SEND1 = 12000;
+    private static final int OSC_PORT_SEND2 = 12001;
+    private static final int OSC_PORT_SEND3 = 12002;
+    // Contour automaton port
+    private static final int OSC_PORT_SEND_CONT = 12003;
+    
     
     // Object to send and receive OSC packets
     private OscP5 osc;
     // Remote address (socket) to send our own info to (to MaxMSP)
-    private NetAddress addr;
+    private NetAddress Life1Addr, Life2Addr, Life3Addr, ContourAddr;
     
     // The automaton
     private Automata aut;
@@ -33,8 +46,10 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     private Automata aut2;
 
     // Automaton rules
-    private AutomataRules rules;
-    private AutomataRules rules2;
+    private AutomataRules Life1Rules;
+    private AutomataRules Life2Rules;
+    private AutomataRules Life3Rules;
+    private AutomataRules ContourRules;
     // Rules lists for the AutomataRules
     private TreeSet<Integer> survive, birth;
 
@@ -50,7 +65,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     private static final int ROWS = 100;
     private static final int COLS = 100;
     private static final int CELL_WIDTH = 5;
-    private static final int CELL_HEIGHT = 5;;
+    private static final int CELL_HEIGHT = 5;
     private static long UPDATE_INTERVAL = 2000; // 1 second
     private static long UPDATE_INTERVAL2 = 5000; // 1 second
 
@@ -71,24 +86,29 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 
 	// Set up OSC stuff
 	osc = new OscP5(this, OSC_PORT_RCV);
-	addr = new NetAddress("127.0.0.1", OSC_PORT_SEND);
+	Life1Addr = new NetAddress("127.0.0.1", OSC_PORT_SEND1);
+	Life2Addr = new NetAddress("127.0.0.1", OSC_PORT_SEND2);
+	Life3Addr = new NetAddress("127.0.0.1", OSC_PORT_SEND3);
+	ContourAddr = new NetAddress("127.0.0.1", OSC_PORT_SEND_CONT);
 	
-	rules = new SingleStateRules(SLIST, BLIST, MAX_STATE);
-	rules2 = new SingleStateRules(SLIST2, BLIST2, MAX_STATE);
+	Life1Rules = new SingleStateRules(SLIST, BLIST, MAX_STATE);
+	ContourRules = new SingleStateRules(SLIST2, BLIST2, MAX_STATE);
 	
 	// Construct the automaton
 	aut = new Automata(this,
 			   ROWS,
 			   COLS,
-			   rules,
-			   "life");
+			   Life1Rules,
+			   "life",
+			   LIFE1);
 
 
 	aut2 = new Automata(this,
 			    ROWS,
 			    COLS,
-			    rules2,
-			    "contour");
+			    ContourRules,
+			    "contour",
+			    CONTOUR);
 
 
 	Cell.setSize(CELL_WIDTH, CELL_HEIGHT);
@@ -100,7 +120,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 		       0L,
 		       UPDATE_INTERVAL);
 
-	timer2 = new Timer();
+ 	timer2 = new Timer();
 	updater2 = new CAUpdater(aut2);
 	timer2.schedule(updater2,
 			0L,
@@ -131,9 +151,9 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 		int row = (int)((double)mouseY/h * aut2.getRows());
 		int col = (int)((double)(mouseX - width/2)/w * aut2.getColumns());
 		
-		Cell c = aut2.getCell(row, col); // c.setCurrentState(true);
+		//		Cell c = aut2.getCell(row, col); // c.setCurrentState(true);
 
-		aut.setCell(row, col, 1);
+		aut2.setCell(row, col, 1);
 	    }
 	} catch (Exception e) {
 	    System.err.println(e.toString());
@@ -341,15 +361,41 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    if (! this.paused) {
 		a.tick();
 
-		// Send reports about population density
-		double density = 0.0;
-		int cellCount = a.getCellCountForOnStates();
-		System.out.println("CELL COUNT: "+cellCount);
-		density = (double)cellCount/(a.getRows() * a.getColumns());
-		System.out.println("DENSITY : "+density);
-		OscMessage OCMsg = new OscMessage("/"+a.getTitle());
-		OCMsg.add(density);
-		osc.send(OCMsg, addr);
+		NetAddress destination = null;
+		AutomataRules rules = null;
+		
+		// Send reports about cell populations
+		switch (a.getID()) {
+		case LIFE1:
+		    destination = Life1Addr;
+		    rules = Life1Rules;
+		    break;
+		case LIFE2:
+		    destination = Life2Addr;
+		    rules = Life2Rules;
+		    break;
+		case LIFE3:
+		    destination = Life3Addr;
+		    rules = Life3Rules;
+		    break;
+		case CONTOUR:
+		    destination = ContourAddr;
+		    rules = ContourRules;
+		    break;
+		default:
+			break;
+		}
+
+		if (null != destination) {
+		    OscMessage popMsg = new OscMessage("/population");
+		    popMsg.add(a.getCellCountForOnStates());
+		    OscMessage oldPopMsg = new OscMessage("/oldestcount");
+		    oldPopMsg.add(a.getCellCountForState(rules.getMaxCellState()));
+
+		    osc.send(popMsg, destination);
+		    osc.send(oldPopMsg, destination);
+		}
+		    
 	    }
 	    
 	    //System.out.println("Generation: "+a.getGeneration());
