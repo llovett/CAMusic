@@ -13,13 +13,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.io.*;
 import java.util.Arrays;
+import java.awt.Dimension;
 
-public class Automata {
+public class Automata extends DrawableObject {
 
     // Reference to the PApplet that can render this Automaton
     private PApplet parent;
     // Automaton width and height
     private int w, h;
+    // Cell width and height
+    private int cW, cH;
     // Automaton rows and columns
     private int r, c;
     // Cell matrix
@@ -39,46 +42,60 @@ public class Automata {
     // other interesting calculations by the user. Storing this information
     // in an array here allows us to supply this information in constant time.
     int[] stateCounts;
-    
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title, int ID) {
+
+    // Some default settings
+    private static final int DEFAULT_CELL_WIDTH = 10;
+    private static final int DEFAULT_CELL_HEIGHT = 10;
+
+    /**
+     * CONSTRUCTOR
+     *
+     * @param parent - PApplet rendering this Automata
+     * @param r, c - Number of rows and columns, respectively
+     * @param rules - AutomataRules to apply to cells upon a call to tick()
+     * @param title - String that is the title of this Automata
+     * @param ID - ID number of this Automata
+     * @param w, h - Width and height of this Automata, respectively
+     **/
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title, int ID, int x, int y) {
+	super(parent);
 	this.parent = parent;
 	this.r = r;
 	this.c = c;
-	this.w = w;
-	this.h = h;
 	this.rules = rules;
 	this.title = title;
 	this.ID = ID;
+
+	setSize(c * cW, r * cH);
+	setPos(x, y);
 	
 	stateCounts = new int[rules.getMaxCellState()+1];
 	Arrays.fill(stateCounts, 0);
 	stateCounts[0] = r*c;
 	
 	// Matrices are <rows><cols>
+	cW = DEFAULT_CELL_WIDTH;
+	cH = DEFAULT_CELL_HEIGHT;
 	cells = new Cell[r][c];
 	for (int i=0; i<r; i++)
 	    for (int j=0; j<c; j++)
-		cells[i][j] = new Cell(parent, j, i);
+		cells[i][j] = new Cell(parent, j, i, cW, cH);
 
-	//		Cell.setSize((int)Math.floor((double)w/c),
-	//				(int)Math.floor((double)h/r));
-
-		
 	diagonals = true;
 	generation = 0;
 		
     }
 
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title) {
-	this(parent, r, c, rules, title, ID_counter++);
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title, int x, int y) {
+	this(parent, r, c, rules, title, ID_counter++, x, y);
     }
 
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, int ID) {
-	this(parent, r, c, rules, "", ID);
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, int ID, int x, int y) {
+	this(parent, r, c, rules, "", ID, x, y);
     }
     
-    public Automata(PApplet parent, int r, int c, AutomataRules rules) {
-	this(parent, r, c, rules, "", ID_counter++);
+    public Automata(PApplet parent, int r, int c, AutomataRules rules, int x, int y) {
+	this(parent, r, c, rules, "", ID_counter++, x, y);
     }
     
     /**
@@ -100,6 +117,21 @@ public class Automata {
 	    }
     }
 
+    public void setCellSize(int w, int h) {
+	cW = w;
+	cH = h;
+	setSize(getColumns() * cW, getRows() * cH);
+	
+	for (Cell[] row : cells) {
+	    for (Cell c : row)
+		c.setSize(cW, cH);
+	}
+    }
+
+    public Dimension getCellSize() {
+	return new Dimension(cW, cH);
+    }
+    
     private ArrayList<Cell> getNeighbors(int row, int col) {		
 	// Use a set here to prevent the addition of duplicates
 	ArrayList<Cell> neighbors = new ArrayList<Cell>();
@@ -201,14 +233,6 @@ public class Automata {
 	return c;
     }
 	
-    public int getWidth() {
-	return w;
-    }
-
-    public int getHeight() {
-	return h;
-    }
-
     public int getGeneration() {
 	return generation;
     }
@@ -265,12 +289,12 @@ public class Automata {
      **/
     private void applyRules() {
 	// DEBUG: Print out state counts
-	System.out.println("# state counts #");
-	System.out.print("{ ");
-	for (int i=0; i<stateCounts.length; i++) {
-	    System.out.print(stateCounts[i]+" ");
-	}
-	System.out.println(" }");
+// 	System.out.println("# state counts #");
+// 	System.out.print("{ ");
+// 	for (int i=0; i<stateCounts.length; i++) {
+// 	    System.out.print(stateCounts[i]+" ");
+// 	}
+// 	System.out.println(" }");
 	
 	for (int row=0; row<cells.length; row++)
 	    for (int col=0; col<cells[row].length; col++) {
@@ -351,14 +375,31 @@ public class Automata {
 	
     }
 
+    public void clearCells() {
+	for (Cell[] row : cells)
+	    for (Cell c : row)
+		c.setCurrentState(0);
+    }
+    
     public void render() {
+	// Uncomment the following line if we actually decide to do something
+	// here more than render the constituent cells:
+	// setupDrawPrefs();
+
+	parent.pushMatrix();
+	parent.translate(getX(), getY());
+
 	for (int row=0; row<cells.length; row++)
 	    for (int col=0; col<cells[row].length; col++) {
 		parent.pushMatrix();
-		parent.translate(col*Cell.getWidth(), row*Cell.getHeight());
+		parent.translate(col*cW, row*cH);
+
 		cells[row][col].render();
+
 		parent.popMatrix();
 	    }
+
+	parent.popMatrix();
     }
 
 }

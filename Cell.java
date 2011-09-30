@@ -18,59 +18,36 @@
 
 import processing.core.*;
 
-public class Cell implements Comparable {
+public class Cell extends DrawableObject implements Comparable {
 
+    // Static variables that determine how to render a cell
+    private static int width, height;
+    private static final int COLOR_UPDATE_AMOUNT = 5;
+	
     private static PApplet parent;
 
     // Current cell state
     private int state;
     // Cell state at the next generation
     private int newstate;
-    //    private boolean alive;
 
-    // Cell state that will be the next state
-    //    private boolean new_alive;
-
-    // Static variables that determine how to render a cell
-    private static int width, height;
-    private static final int DEFAULT_WIDTH = 10;
-    private static final int DEFAULT_HEIGHT = 10;
-    private static final int COLOR_UPDATE_AMOUNT = 20;
-	
     // Cell's own reference as to its position in the automaton
     private int x, y;
-
-    public Cell(PApplet parent, int x, int y) {
+    
+    public Cell(PApplet parent, int x, int y, int w, int h) {
+	super(parent);
+	
 	this.parent = parent;
-	this.width = DEFAULT_WIDTH;
-	this.height = DEFAULT_HEIGHT;
+
+
 
 	state = 0;
 	newstate = 0;
-	
-	this.x = x;
-	this.y = y;
-    }
 
-    public static void setWidth(int w) {
-	width = w;
-    }
-
-    public static void setHeight(int h) {
-	height = h;
-    }
-
-    public static void setSize(int w, int h) {
-	setWidth(w);
-	setHeight(h);
-    }
-
-    public static int getWidth() {
-	return width;
-    }
-
-    public static int getHeight() {
-	return height;
+	// Graphical things
+	setSize(w, h);
+	setPos(x, y);
+	setStrokeWidth(0);
     }
 
     /**
@@ -78,23 +55,14 @@ public class Cell implements Comparable {
      *
      * Draw this Cell.
      **/
-    @SuppressWarnings("restriction")
-	public void render() {
-	parent.colorMode(parent.HSB);
-	if (! isAlive())
-	    parent.fill(0);
-	else
-	    parent.fill(
-			constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 180),
-			255,
-			255);
-	//		if (isAlive())
-	//			parent.fill(255);
-	//		else
-	//			parent.fill(0);
-	parent.strokeWeight(2);
-	parent.stroke(0);
-	parent.rect(0, 0, width, height);
+    public void render() {
+	if (isAlive()) {
+	    setupDrawPrefs();
+
+	    // EXPENSIVE: use HSB with an alpha channel
+	    parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
+	    parent.ellipse(0, 0, getWidth()*2, getHeight()*2);
+	}
     }
 
     /**
@@ -103,7 +71,6 @@ public class Cell implements Comparable {
      */
     public boolean isAlive() {
 	return state != 0;
-	//	return alive;
     }
 
 //     /**
@@ -134,7 +101,8 @@ public class Cell implements Comparable {
 //     }
 
     public void setCurrentState(int state) {
-	this.state = state;
+	setState(state);
+	confirmState();
 
 	// Assume that we will age at the next generation
 	newstate = state+1;
@@ -142,7 +110,6 @@ public class Cell implements Comparable {
 	
 
     public void setState(int state) {
-	//	this.state = state;
 	newstate = state;
     }
     
@@ -150,24 +117,17 @@ public class Cell implements Comparable {
 	return state;
     }
 
-//     /**
-//      * tick() - Used by the cellular automata matrix
-//      * to age this cell and do any other updates required.
-//      *
-//      **/
-//     public void tick() {
-// 	// If we're going to be around the next generation, count current
-// 	// generation towards our age at that point.
-// 	if (alive)
-// 	    state++;
-//     }
-
     public void confirmState() {
 	state = newstate;
-	
-// 	alive = new_alive;
-// 	if (! alive)
-// 	    state = 0;
+
+	//	parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
+	if (isAlive())
+	    setColor(constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 180),
+		     255,
+		     255,
+		     255);
+	else
+	    setColor(255, 255, 255, 0);
     }
 
     @Override
