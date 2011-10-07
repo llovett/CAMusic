@@ -31,7 +31,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     // Try out the following settings for old 1280 x 800 screen res macbook:
     private static final int ROWS_LIFE = 100;
     private static final int COLS_LIFE = 100; // was 84
-    private static final int ROWS_CONTOUR = 100; // was 60
+    private static final int ROWS_CONTOUR = 160; // was 60
     private static final int COLS_CONTOUR = 256;
     private static final int CELL_WIDTH = 5;
     private static final int CELL_HEIGHT = 5;
@@ -96,7 +96,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 
 	// Test settings:
 	// size(COLS * CELL_WIDTH * 2, ROWS * CELL_HEIGHT * 2, OPENGL);
-	// Sweet macbook settings below:
+	// Sweet macbook settings below:⁄
 	size(1280, 800, JAVA2D);
 	
 	// Set up OSC stuff
@@ -154,16 +154,30 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 				       "contour",
 				       CONTOUR,
 				       0,
-				       300);
+				       0);
 	
 	AutomataContour.setCellSize(CELL_WIDTH, CELL_HEIGHT);
 
+	// Set up some colors for the automata
+	AutomataBass.setColor(255, 255, 255);
+	AutomataBass.setStrokeWidth(0);
+	
+	AutomataSamp1.setColor(0, 0, 0);
+	AutomataSamp1.setStrokeWidth(0);
+	
+	AutomataSamp2.setColor(255, 255, 255);
+	AutomataSamp2.setStrokeWidth(0);
+	
+	AutomataContour.setColor(255, 255, 255, 0);
+	AutomataContour.setStrokeWidth(0);
+	
+	// Add automata to the CAMusicAutomata list for easy management
 	CAMusicAutomata.add(AutomataBass);
 	CAMusicAutomata.add(AutomataSamp1);
 	CAMusicAutomata.add(AutomataSamp2);
 	CAMusicAutomata.add(AutomataContour);
 	
-	// ... instead, use a Timer to update at arbitrary regular intervals.
+	// Use a Timer to update at arbitrary regular intervals.
 	ArrayList<Automata> lifeAuts = new ArrayList<Automata>();
 	lifeAuts.add(AutomataBass);
 	lifeAuts.add(AutomataSamp1);
@@ -174,7 +188,8 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 		       0L,
 		       UPDATE_INTERVAL_LIFE);
 
-	// Use a different timer for the contour automaton
+	// Use a different timer for the contour automaton (create different
+	// update "tempi" this way)
  	timer2 = new Timer();
 	UpdaterContour = new CAUpdater(AutomataContour);
 	timer2.schedule(UpdaterContour,
@@ -375,7 +390,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
      ******************/
 
     public void draw() {
-	colorMode(RGB, 255, 255, 255);
+	// colorMode(RGB, 255, 255, 255);
 	background(255);
 
 	for (Automata a : CAMusicAutomata)

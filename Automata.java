@@ -24,7 +24,7 @@ public class Automata extends DrawableObject {
     // Cell width and height
     private int cW, cH;
     // Automaton rows and columns
-    private int r, c;
+    private int rows, columns;
     // Cell matrix
     private Cell[][] cells;
     // Automaton generation
@@ -51,34 +51,35 @@ public class Automata extends DrawableObject {
      * CONSTRUCTOR
      *
      * @param parent - PApplet rendering this Automata
-     * @param r, c - Number of rows and columns, respectively
+     * @param rows, columns - Number of rows and columns, respectively
      * @param rules - AutomataRules to apply to cells upon a call to tick()
      * @param title - String that is the title of this Automata
      * @param ID - ID number of this Automata
      * @param w, h - Width and height of this Automata, respectively
      **/
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title, int ID, int x, int y) {
+    public Automata(PApplet parent, int rows, int columns, AutomataRules rules, String title, int ID, int x, int y) {
 	super(parent);
 	this.parent = parent;
-	this.r = r;
-	this.c = c;
+	this.rows = rows;
+	this.columns = columns;
 	this.rules = rules;
 	this.title = title;
 	this.ID = ID;
 
-	setSize(c * cW, r * cH);
+	cW = DEFAULT_CELL_WIDTH;
+	cH = DEFAULT_CELL_HEIGHT;
+	
+	setSize(columns * cW, rows * cH);
 	setPos(x, y);
 	
 	stateCounts = new int[rules.getMaxCellState()+1];
 	Arrays.fill(stateCounts, 0);
-	stateCounts[0] = r*c;
+	stateCounts[0] = rows*columns;
 	
 	// Matrices are <rows><cols>
-	cW = DEFAULT_CELL_WIDTH;
-	cH = DEFAULT_CELL_HEIGHT;
-	cells = new Cell[r][c];
-	for (int i=0; i<r; i++)
-	    for (int j=0; j<c; j++)
+	cells = new Cell[rows][columns];
+	for (int i=0; i<rows; i++)
+	    for (int j=0; j<columns; j++)
 		cells[i][j] = new Cell(parent, j, i, cW, cH);
 
 	diagonals = true;
@@ -86,16 +87,16 @@ public class Automata extends DrawableObject {
 		
     }
 
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, String title, int x, int y) {
-	this(parent, r, c, rules, title, ID_counter++, x, y);
+    public Automata(PApplet parent, int rows, int columns, AutomataRules rules, String title, int x, int y) {
+	this(parent, rows, columns, rules, title, ID_counter++, x, y);
     }
 
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, int ID, int x, int y) {
-	this(parent, r, c, rules, "", ID, x, y);
+    public Automata(PApplet parent, int rows, int columns, AutomataRules rules, int ID, int x, int y) {
+	this(parent, rows, columns, rules, "", ID, x, y);
     }
     
-    public Automata(PApplet parent, int r, int c, AutomataRules rules, int x, int y) {
-	this(parent, r, c, rules, "", ID_counter++, x, y);
+    public Automata(PApplet parent, int rows, int columns, AutomataRules rules, int x, int y) {
+	this(parent, rows, columns, rules, "", ID_counter++, x, y);
     }
     
     /**
@@ -226,11 +227,11 @@ public class Automata extends DrawableObject {
     }
 
     public int getRows() {
-	return r;
+	return rows;
     }
 	
     public int getColumns() {
-	return c;
+	return columns;
     }
 	
     public int getGeneration() {
@@ -351,18 +352,18 @@ public class Automata extends DrawableObject {
 	
     public Cell getCell(int row, int col) {
 	if (row >= cells.length || col >= cells[0].length)
-	    throw new NoSuchElementException("Rows: "+r+"; Cols: "+c+"; requested cell at <"+row+"><"+col+">");
+	    throw new NoSuchElementException("Rows: "+rows+"; Cols: "+columns+"; requested cell at <"+row+"><"+col+">");
 	if (row < 0 || col < 0)
-	    throw new NoSuchElementException("Rows: "+r+"; Cols: "+c+"; requested cell at <"+row+"><"+col+">");
+	    throw new NoSuchElementException("Rows: "+rows+"; Cols: "+columns+"; requested cell at <"+row+"><"+col+">");
 		
 	return cells[row][col];
     }
 
     public void setCell(int row, int col, int state) {
 	if (row >= cells.length || col >= cells[0].length)
-	    throw new NoSuchElementException("Rows: "+r+"; Cols: "+c+"; requested cell at <"+row+"><"+col+">");
+	    throw new NoSuchElementException("Rows: "+rows+"; Cols: "+columns+"; requested cell at <"+row+"><"+col+">");
 	if (row < 0 || col < 0)
-	    throw new NoSuchElementException("Rows: "+r+"; Cols: "+c+"; requested cell at <"+row+"><"+col+">");
+	    throw new NoSuchElementException("Rows: "+rows+"; Cols: "+columns+"; requested cell at <"+row+"><"+col+">");
 // 	if (state > rules.getMaxCellState()) {
 // 	    Exception e = new Exception("state "+state+" is out of range of maximum state "+rules.getMaxCellState());
 // 	    throw e;
@@ -384,11 +385,14 @@ public class Automata extends DrawableObject {
     public void render() {
 	// Uncomment the following line if we actually decide to do something
 	// here more than render the constituent cells:
-	// setupDrawPrefs();
-
+	setupDrawPrefs();
+	
 	parent.pushMatrix();
 	parent.translate(getX(), getY());
 
+	// "Background" of the automaton
+	parent.rect(0, 0, cW * columns, cH * rows);
+	
 	for (int row=0; row<cells.length; row++)
 	    for (int col=0; col<cells[row].length; col++) {
 		parent.pushMatrix();
