@@ -57,11 +57,15 @@ public class Cell extends DrawableObject implements Comparable {
      **/
     public void render() {
 	if (isAlive()) {
+		// EXPENSIVE: use HSB with an alpha channel
+	    parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
 	    setupDrawPrefs();
 
-	    // EXPENSIVE: use HSB with an alpha channel
-	    parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
+
 	    parent.ellipse(0, 0, getWidth()*2, getHeight()*2);
+	    
+	    // Switch it back off so we don't get confused.
+//	    parent.colorMode(PApplet.RGB, 255, 255, 255, 255);
 	}
     }
 
@@ -127,6 +131,7 @@ public class Cell extends DrawableObject implements Comparable {
 		     255,
 		     255);
 	else
+		// Set to transparent
 	    setColor(255, 255, 255, 0);
     }
 

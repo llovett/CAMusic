@@ -10,8 +10,6 @@ public class CAMusicWrapper extends Frame {
 	CAMusic cam;
 
 	public CAMusicWrapper() {
-		cam = new CAMusic();
-
 		constructComponents();
 	}
 
@@ -28,7 +26,8 @@ public class CAMusicWrapper extends Frame {
 
 		cam = new CAMusic();
 		cam.init();
-		cam.setup();
+		
+//		cam.setup();
 
 		setResizable(false);
 		setMinimumSize(new Dimension(
