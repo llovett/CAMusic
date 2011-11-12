@@ -1,0 +1,84 @@
+/**
+ * CASoundPen.java
+ *
+ * This class imitates a "virtual pen," to be controlled by OSC messages send
+ * out from MaxMSP. The pen may apply varying pressure on its canvas (an
+ * arbitrary Automaton).
+ *
+ * Parameters to be controlled:
+ * X, Y position
+ * pressure
+ **/
+
+import oscP5.*;
+import netP5.*;
+import java.awt.Point;
+import java.awt.Dimension;
+
+public class CASoundPen {
+
+    // Private fields, controlling various aspects of how the pen draws
+    private double penPressure;
+    private int penX, penY;
+
+    // Private constants, thresholds, etc.
+    private static final double PRESSURE_THRESHOLD = 0.5; // How hard the pen
+							  // must press in order
+							  // to change a cell's
+							  // state in the automaton.
+    private Dimension cellSize; // Internal reference to how big cells are
+				// within the automaton
+    private static final int OSC_PORT_RCV = 8000; // What port we receive OSC
+						  // packets on.
+    
+    /**
+     * CONSTRUCTOR
+     *
+     * @param aut - Automaton on which this CASoundPen draws.
+     **/
+    public CASoundPen(Automata aut) {
+	cellSize = aut.getCellSize();
+    }
+
+    public void setPenPosition(int x, int y) {
+	penX = x;
+	penY = y;
+    }
+
+    public void setPenPosition(Point p) {
+	penX = (int)p.getX();
+	penY = (int)p.getY();
+    }
+
+    public void setPenPressure(double pressure) {
+	penPressure = pressure;
+    }
+
+    /**
+     * applyPen()
+     *
+     * Applies current pen attributes in order to affect its automaton.
+     **/
+    public void applyPen() {
+	if (penPressure >= PRESSURE_THRESHOLD) {
+	    // Wrap around automaton boundaries
+	    int cellX = ((penX % aut.getWidth()) / (double)aut.getWidth()) * cellSize.getWidth();
+	    int cellY = ((penY % aut.getHeight()) / (double)aut.getHeight()) * cellSize.getHeight();
+
+	    a.setCell(cellY, cellX, 1);
+	}
+    }
+
+    /**
+     * oscEvent(msg)
+     *
+     * This method is called when we have received an OscMessage on
+     * OSC_PORT_RCV
+     **/
+    public void oscEvent(OscMessage msg) {
+	System.out.println("OSC message received ====");
+	System.out.print(msg.addrPattern()+"\t"+msg.typeTag()+"\n");
+	System.out.println("=============================");
+    }
+
+}

@@ -8,3 +8,106 @@ Strange attractors
 Recording of CAMUS (other automata-produced music)
 
 LISTENING LIST:
+
+
+==============================
+
+NEW DESIGN PRINCIPLE:
+
+The bassist is playing a game. The interface provided gives a very playable
+"score" which changes per the automata (described below). The way in which the
+instrumentalist articulates and expresses what is delivered on the screen then
+changes the automata, which of course feeds back to the bassist's
+instructions...
+
+Top-left automaton:
+------------------------------
+Vertical height represents pitch (not in in order low-->high, but scattered),
+horizontal width represents the "weight" of that pitch (only certain pitches can
+be transmitted to the bassist at once). This representation is meaningful, since
+the rules of this automaton give patterns that are very tight, difficult to
+change, and have a very high periodicity.
+
+As this automaton uses traditional GoL rules, it does tend (or parts tend) to
+stabilize after a certain period of time. This is the trigger for a change in 
+
+Top-right automaton:
+------------------------------
+The difference in population (which changes quite variably, per traditional GoL
+rules, coupled with changing cells per bass interactions) gives a distance
+between "ticks" of events. Each "tick" goes on a timeline, presented to the
+bassist. The bassist then plays a specified note (see above) at the given
+tick. In this way, a variable sense of tempo and rhythm is given by this
+automaton. 
+
+
+
+
+TALKING ABOUT RHYTHM...
+
+Musical events are calculated from FRAMES, which are snapshots in time taken by
+the CAMusic program at arbitrary regular intervals. At each FRAME, we produce
+one or more pitches that are sent immediately over to the scoreViewer max patch
+for display onto the performer's screen. Each FRAME also produces a time-offset
+from the current moment in time (a time-to-go) for some musical event in the
+future. This number is also sent to max, and is inserted onto the scrolling
+"rhythm tape."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================
+STUDIO STUDIO STUDIO STUDIO
+========================================
+
+Working on actual generation of music at this point. I have been rethinking this
+piece as more of a piece that acts like a game. Ideally, the final output
+(program, max, etc.) is something that can be packaged together and played by
+anyone on any computer (think: computer game/toy).
+
+Problems: 
+	  1. Will music be interesting?
+	     a. Just started working on this, so prob. not yet
+	     b. Also have to consider processing
+	     	i. Have no idea what kinds of processing...
+	  2. What kind of interface will performer want?
+	     a. A sort of "game-style" interface that makes performance fun.
+	     b. Some way of tracking accuracy/assertiveness and inaccuracies in playing
+	  3. What kinds of sound treatment? How to treat the treatments?
+	     a. Should this be something that is pre-determined, running off of
+	  input from bass/automaton?
+	     b. Should this be something the performer herself may select? (**)
+	     c. Treatment specifics/parameters should probably be arbitrary...
+
+	1. Accuracy of playing ~~ "contributions to life"
+	2. Richness of tone ~~ adding to the "culture"
+	3. Choices of treatments ~~ perspective on automation, the
+	human-determined machine quality
+	4. 

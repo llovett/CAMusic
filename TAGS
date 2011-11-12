@@ -1,0 +1,136 @@
+
+Automata.java,1800
+public class Automata 20,326
+    public Automata(Automata.Automata62,1919
+    public Automata(Automata.Automata92,2617
+    public Automata(Automata.Automata96,2798
+    public Automata(Automata.Automata100,2960
+    public void initializeCellsFromStates(Automata.initializeCellsFromStates111,3300
+    public void initializeCellsFromFile(Automata.initializeCellsFromFile126,3778
+    public void setCellFadeout(Automata.setCellFadeout163,4768
+    public void setCellSize(Automata.setCellSize169,4900
+    public Dimension getCellSize(Automata.getCellSize180,5091
+    private ArrayList<Cell> getNeighbors(Automata.getNeighbors190,5366
+    public int getRows(Automata.getRows283,7647
+    public int getColumns(Automata.getColumns287,7695
+    public int getGeneration(Automata.getGeneration291,7749
+    public String getTitle(Automata.getTitle295,7809
+    public int getID(Automata.getID299,7862
+    public void setTitle(Automata.setTitle303,7906
+    public void setID(Automata.setID307,7975
+    public int getCellCountForOnStates(Automata.getCellCountForOnStates324,8513
+    public int getCellCountForState(Automata.getCellCountForState343,9139
+    public int getCellCountForState(Automata.getCellCountForState377,9897
+    public int getCellCountForOnStates(Automata.getCellCountForOnStates389,10168
+    public Point[] getNhoodDensities(Automata.getNhoodDensities407,10676
+    public void setDiagonalsUsage(Automata.setDiagonalsUsage457,12183
+    private void applyRules(Automata.applyRules465,12413
+    public void tick(Automata.tick513,13633
+    public Cell getCell(Automata.getCell527,13870
+    public void setCell(Automata.setCell536,14252
+    public void clearCells(Automata.clearCells553,14925
+    public void render(Automata.render559,15037
+
+AutomataRules.java,62
+public interface AutomataRules Automata.AutomataRules12,137
+
+CAMusic.java,1588
+public class CAMusic AutomataRules.CAMusic30,927
+    public void setup(CAMusic.setup140,5192
+    private Automata getAutomatonAtXY(CAMusic.getAutomatonAtXY270,8983
+    private void activateCellAtXY(CAMusic.activateCellAtXY287,9272
+    private void clearCells(CAMusic.clearCells310,9861
+    public int getWidth(CAMusic.getWidth320,10048
+    public int getHeight(CAMusic.getHeight324,10098
+    public void oscEvent(CAMusic.oscEvent343,10639
+    public void mouseClicked(CAMusic.mouseClicked351,10823
+    public void mousePressed(CAMusic.mousePressed355,10898
+    public void mouseReleased(CAMusic.mouseReleased360,10974
+    public void mouseDragged(CAMusic.mouseDragged364,11045
+    public void mouseDown(CAMusic.mouseDown368,11120
+    public void keyPressed(CAMusic.keyPressed372,11187
+    public void mouseWheelMoved(CAMusic.mouseWheelMoved390,11521
+    public void draw(CAMusic.draw441,13016
+    private void calculateFrameAndSend(CAMusic.calculateFrameAndSend457,13398
+    private class CAUpdater CAMusic.CAUpdater533,16459
+	public CAUpdater(CAMusic.CAUpdater.CAUpdater539,16598
+	public CAUpdater(CAMusic.CAUpdater.CAUpdater547,16765
+	public CAUpdater(CAMusic.CAUpdater.CAUpdater554,16912
+	public CAUpdater(CAMusic.CAUpdater.CAUpdater558,16969
+	public void pause(CAMusic.CAUpdater.pause562,17042
+	public void unPause(CAMusic.CAUpdater.unPause566,17089
+	public boolean isPaused(CAMusic.CAUpdater.isPaused570,17139
+	public void run(CAMusic.CAUpdater.run574,17192
+    private interface UpdateOperation CAMusic.UpdateOperation621,18413
+
+CAMusicWrapper.java,248
+public class CAMusicWrapper CAMusic.CAMusicWrapper8,189
+	public CAMusicWrapper(CAMusicWrapper.CAMusicWrapper12,249
+	public void constructComponents(CAMusicWrapper.constructComponents16,305
+	public static void main(CAMusicWrapper.main45,800
+
+CASoundPen.java,474
+public class CASoundPen 19,439
+    public CASoundPen(CASoundPen.CASoundPen37,1055
+    private static void loadMatrices(CASoundPen.loadMatrices50,1401
+    private void imposeMatrix(CASoundPen.imposeMatrix95,2730
+    public void setPenPosition(CASoundPen.setPenPosition102,3024
+    public void setPenPosition(CASoundPen.setPenPosition107,3100
+    public void setPenPressure(CASoundPen.setPenPressure112,3195
+    public void applyPen(CASoundPen.applyPen121,3388
+
+Cell.java,617
+public class Cell 22,674
+    public Cell(Cell.Cell44,1410
+    public void setFadeout(Cell.setFadeout62,1693
+    public boolean isAlive(Cell.isAlive70,1884
+    public void setCurrentState(Cell.setCurrentState74,1942
+    public void setState(Cell.setState84,2166
+    public int getState(Cell.getState88,2234
+    public void confirmState(Cell.confirmState92,2284
+    public void render(Cell.render130,3234
+	public int compareTo(Cell.compareTo142,3493
+    public boolean equals(Cell.equals160,3745
+    private int constrain(Cell.constrain164,3831
+    public String toString(Cell.toString169,3955
+
+DrawableObject.java,1313
+public class DrawableObject Cell.DrawableObject13,215
+    public DrawableObject(DrawableObject.DrawableObject26,516
+    public int getX(DrawableObject.getX33,668
+    public int getY(DrawableObject.getY37,710
+    public int getWidth(DrawableObject.getWidth41,752
+    public int getHeight(DrawableObject.getHeight45,798
+    public int getStrokeWidth(DrawableObject.getStrokeWidth49,845
+    public int[] getColor(DrawableObject.getColor53,907
+    public int[] getStrokeColor(DrawableObject.getStrokeColor57,977
+    public void setX(DrawableObject.setX65,1133
+    public void setY(DrawableObject.setY69,1183
+    public void setPos(DrawableObject.setPos73,1233
+    public void setWidth(DrawableObject.setWidth78,1309
+    public void setHeight(DrawableObject.setHeight82,1363
+    public void setSize(DrawableObject.setSize86,1418
+    public void setStrokeWidth(DrawableObject.setStrokeWidth91,1491
+    public void setColor(DrawableObject.setColor95,1581
+    public void setColor(DrawableObject.setColor101,1675
+    public void setColor(DrawableObject.setColor108,1795
+    public void setStrokeColor(DrawableObject.setStrokeColor115,1913
+    public void setStrokeColor(DrawableObject.setStrokeColor121,2022
+    public void setupDrawPrefs(DrawableObject.setupDrawPrefs134,2287
+
+MultiStatesRules.java,383
+public class MultiStatesRules DrawableObject.MultiStatesRules4,55
+    public MultiStatesRules(MultiStatesRules.MultiStatesRules11,187
+	public int apply(MultiStatesRules.apply19,330
+    public int getMaxCellState(MultiStatesRules.getMaxCellState74,2280
+    public void setMaxCellState(MultiStatesRules.setMaxCellState78,2340
+    public int has(MultiStatesRules.has83,2420
+
+SingleStateRules.java,423
+public class SingleStateRules 4,55
+    public SingleStateRules(SingleStateRules.SingleStateRules11,184
+    public SingleStateRules(SingleStateRules.SingleStateRules19,302
+    public int getMaxCellState(SingleStateRules.getMaxCellState28,461
+    public void setMaxCellState(SingleStateRules.setMaxCellState32,521
+    public int apply(SingleStateRules.apply36,596
+    private int has(SingleStateRules.has67,1128

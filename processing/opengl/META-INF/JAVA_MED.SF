@@ -1,0 +1,1389 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: mQmlcyY7kijr27VyRRTezlBep+0=
+Created-By: 1.6.0 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest: 9KZFJDUedKxFjaClCYSnCMkWkzE=
+
+Name: javax/media/opengl/AbstractGraphicsConfiguration.class
+SHA1-Digest: FFK3TC786ulkDg+rKi8HO/ywXbA=
+
+Name: com/sun/opengl/util/texture/TextureData.class
+SHA1-Digest: kA/ZKpfmakDeNDG31Fl6rADvCuI=
+
+Name: com/sun/opengl/cg/CGstateassignment64.class
+SHA1-Digest: 9WN5jr9YADTqQ09UBZERDj2lrzc=
+
+Name: javax/media/opengl/glu/GLU.class
+SHA1-Digest: +v8HG9rmNCwTd7jwZpJDRXgxmGs=
+
+Name: com/sun/opengl/impl/windows/WindowsGLDrawableFactory.class
+SHA1-Digest: mWUEQe1MrCYzMB+4IwdL2XlnnvY=
+
+Name: com/sun/opengl/impl/mipmap/ExtractFloat.class
+SHA1-Digest: ITL4nX67WSy8PLqmQg1A6z63kX0=
+
+Name: com/sun/opengl/impl/windows/WindowsPbufferGLContext.class
+SHA1-Digest: Qrj8rcgBFwXvmpvb2opAqMDUI/E=
+
+Name: com/sun/opengl/impl/macosx/JAWT_MacOSXDrawingSurfaceInfo.class
+SHA1-Digest: TJYwqYfkjelIIOhHoja32gXcYvA=
+
+Name: com/sun/opengl/impl/mipmap/Mipmap.class
+SHA1-Digest: KwKwitVPyl3EK4AJokqIAZAbkBo=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLDrawable$CGLImpl.class
+SHA1-Digest: nGX8T3+bmFywzaISduOHdUiuers=
+
+Name: com/sun/opengl/impl/x11/JAWT_X11DrawingSurfaceInfo32.class
+SHA1-Digest: Z87QbRXW/9D3uo/SmvlqYYDLFjE=
+
+Name: javax/media/opengl/AWTGraphicsConfiguration.class
+SHA1-Digest: rhLnpDqX0mGVmOtF2zAJyttxq4w=
+
+Name: com/sun/opengl/impl/JAWT$1.class
+SHA1-Digest: i8q0SnfEsfrBNM/gYJ56UOqoarg=
+
+Name: com/sun/opengl/impl/windows/RECT.class
+SHA1-Digest: O9duc5l7pL//pRLm+bBUbrnJDbw=
+
+Name: com/sun/opengl/util/texture/TextureIO$SGITextureProvider.class
+SHA1-Digest: VCIFMyeeCuctBncgAFCBs1Y/jvw=
+
+Name: com/sun/opengl/impl/tessellator/Dict.class
+SHA1-Digest: qwqnaC3e5HRfSK1sWH6rvWQY3us=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQSort$Stack.class
+SHA1-Digest: PZQKZv67/T+7IczyLoXCJT0PkSE=
+
+Name: com/sun/opengl/impl/GLDrawableHelper.class
+SHA1-Digest: x/Q1GrbiriVNGhLELDDp/yNRxpo=
+
+Name: com/sun/opengl/impl/mipmap/Extract4444rev.class
+SHA1-Digest: IrsWkhEwMsPQ9VUSWhjK98FI3DI=
+
+Name: com/sun/opengl/util/j2d/Overlay.class
+SHA1-Digest: ps7Xlm7InvMzbHlISOzHjXNn1w0=
+
+Name: javax/media/opengl/GLCanvas$DisplayAction.class
+SHA1-Digest: SWL2gaR4JtD9OAIK3RyYCQL5kLw=
+
+Name: com/sun/opengl/impl/macosx/MacOSXExternalGLContext.class
+SHA1-Digest: M0wlLLjYq28RbOH6aZaoxkD+SFU=
+
+Name: javax/media/opengl/TraceGL.class
+SHA1-Digest: BF2Q42ppII/jGMnqgTnH7c01bLw=
+
+Name: javax/media/opengl/GLJPanel$Updater.class
+SHA1-Digest: jzGJHTByr6818uYdABrICJBAhko=
+
+Name: javax/media/opengl/AWTGraphicsDevice.class
+SHA1-Digest: tjC5FuKBpyAjgB44DqfdeOiJMrI=
+
+Name: com/sun/opengl/impl/nurbs/Curve.class
+SHA1-Digest: yg+8w+lIweVn79g/BVh9/KeDHl8=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLContext$1.class
+SHA1-Digest: QekvtiKgLvWk9H6wP8MgJsxCEfA=
+
+Name: com/sun/opengl/impl/x11/X11OffscreenGLContext.class
+SHA1-Digest: WwlJcdqsAfzMCJAo2h5abwC3nYs=
+
+Name: com/sun/opengl/impl/nurbs/Curvelist.class
+SHA1-Digest: uGNb4emAaTw2xNPIt1xIJ49zodA=
+
+Name: com/sun/opengl/impl/windows/JAWT_Win32DrawingSurfaceInfo.class
+SHA1-Digest: vPJrChVuOjus/2pRvMjOFj2KvPY=
+
+Name: com/sun/opengl/impl/windows/WindowsExternalGLContext.class
+SHA1-Digest: VHP/Dc1icpgNXnwcj5aYqpMV/Dg=
+
+Name: com/sun/opengl/impl/packrect/LevelSet.class
+SHA1-Digest: QI6+x3OwtGZDQfPUg31gBfxqwZE=
+
+Name: com/sun/opengl/cg/CGstate64.class
+SHA1-Digest: XppSnFgWSx1PiN3yBj1k9/Awe2Y=
+
+Name: com/sun/opengl/impl/x11/JAWT_X11DrawingSurfaceInfo.class
+SHA1-Digest: aEWpQKTLabnkxSIFf+g8dx2cBmc=
+
+Name: com/sun/opengl/impl/windows/WindowsDummyGLDrawable.class
+SHA1-Digest: RAT3xMITt+8+iBcsuw2UlpSfXNQ=
+
+Name: com/sun/opengl/impl/macosx/MacOSXOnscreenGLContext.class
+SHA1-Digest: rjC6QE7xfvf+Zia0G8jDAKnWFuQ=
+
+Name: com/sun/opengl/impl/windows/PIXELFORMATDESCRIPTOR.class
+SHA1-Digest: XaB0us6wSan2sUXfmfKj3SZSCx4=
+
+Name: com/sun/opengl/util/GLUT.class
+SHA1-Digest: 9rK0NF23QMxtz6d4qCpv/G3VCFw=
+
+Name: com/sun/opengl/impl/glue/Glue.class
+SHA1-Digest: YIcw+FPbV3bBo5/sT1xv1LUKzFY=
+
+Name: com/sun/opengl/impl/x11/X11OnscreenGLDrawable.class
+SHA1-Digest: dOFmpqHgbcobhkADXNT3x/aOPeE=
+
+Name: com/sun/opengl/util/GLUTBitmapHelvetica10.class
+SHA1-Digest: tAgJ07nqLRSINZmz02uc42TO/WM=
+
+Name: com/sun/opengl/impl/packrect/Level$RectXComparator.class
+SHA1-Digest: kHCpRwDC0Ba/o9ZuQTW1gn/StQ8=
+
+Name: com/sun/opengl/impl/macosx/CGLExtImpl.class
+SHA1-Digest: 03aIxxrceAkkxCkFXh5TMBzhIbU=
+
+Name: javax/media/opengl/GLJPanel$SwapBuffersAction.class
+SHA1-Digest: kxjB2l9x3KA1KNKZxfzC1Uy7vFo=
+
+Name: com/sun/opengl/impl/x11/GLXFBConfig.class
+SHA1-Digest: PujYb4VDGlIRgJvR3EurXYsyXKc=
+
+Name: com/sun/opengl/util/texture/TextureIO$IIOTextureProvider.class
+SHA1-Digest: UPkESTlQTm6W5fbYfFmMrur/diA=
+
+Name: com/sun/opengl/impl/GLObjectTracker$12.class
+SHA1-Digest: R7aWcPdRDnAAdOng3tr0TiofD7Q=
+
+Name: com/sun/opengl/impl/GLObjectTracker$15.class
+SHA1-Digest: sts4gWDyavmubmJpwrNCbib/vEE=
+
+Name: com/sun/opengl/impl/x11/X11PbufferGLContext.class
+SHA1-Digest: 4L8rMfKQsMdOBaq682n/Dq/3OzE=
+
+Name: com/sun/opengl/impl/GLObjectTracker$13.class
+SHA1-Digest: n96Nvs8PX46VUDU3LPhNBJsIabA=
+
+Name: com/sun/opengl/impl/windows/RGBQUAD64.class
+SHA1-Digest: fIjTLC2Jz+4UA7dH2Wi509EH3i4=
+
+Name: com/sun/opengl/util/TGAWriter.class
+SHA1-Digest: +rRo01ksDXeV1aXrulG0QVSZMTs=
+
+Name: com/sun/opengl/impl/windows/WGLExtImpl.class
+SHA1-Digest: BuuT05cCdJJAu4gLznPbV4stVz8=
+
+Name: com/sun/opengl/impl/mipmap/Extract565.class
+SHA1-Digest: 8IKbm7JAgqRIN1dyQSgNaZnFD7U=
+
+Name: com/sun/opengl/impl/GLObjectTracker.class
+SHA1-Digest: eJhlitzQXW6HBydwLZSHQKJJKFg=
+
+Name: javax/media/opengl/GLCanvas$1.class
+SHA1-Digest: KWhH47X6PTSS1VktDWiDJ6b5CTc=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurface64.class
+SHA1-Digest: NGYbupSYTIRR4kyXSZWAlNpkfRs=
+
+Name: com/sun/opengl/util/texture/spi/DDSImage$ImageInfo.class
+SHA1-Digest: xDn9h46gCu2GvjKoYn8CDy5b2z0=
+
+Name: com/sun/opengl/impl/nurbs/O_surface.class
+SHA1-Digest: IG21E92vXj6Ay8/FhTeTW/kYhF0=
+
+Name: com/sun/opengl/impl/GLDrawableFactoryImpl.class
+SHA1-Digest: n72ei4ZCYsEkkwe69ey7+CQQW+w=
+
+Name: javax/media/opengl/Threading.class
+SHA1-Digest: YuFR6voKSuAfxtL+TWKEm3TN9Us=
+
+Name: com/sun/opengl/impl/GLObjectTracker$18.class
+SHA1-Digest: LapKYub0+7c+n46voQJ4xdazWw0=
+
+Name: com/sun/opengl/impl/GLBufferStateTracker.class
+SHA1-Digest: dPvBoseQKb0uXLs5YPTdhqlFveE=
+
+Name: com/sun/opengl/impl/macosx/MacOSXOnscreenGLDrawable$1.class
+SHA1-Digest: 8P0Z4c7IQ0JQbk7EBdF6Y0RlQOw=
+
+Name: com/sun/opengl/cg/CGeffect32.class
+SHA1-Digest: jmdh5vg8sU2zQeGJGmYDXqZDdfs=
+
+Name: javax/media/opengl/GLCanvas$DestroyAction.class
+SHA1-Digest: kyx3WS/XgOltw/GeO96EsphTOzM=
+
+Name: com/sun/opengl/util/StrokeRec.class
+SHA1-Digest: QEMC5/GT3PXJViUYqDtdXkWICDI=
+
+Name: com/sun/opengl/impl/macosx/CGL.class
+SHA1-Digest: EhpVu1envAyZuImE//sigF5TCIg=
+
+Name: com/sun/opengl/util/ImageUtil.class
+SHA1-Digest: IK2XehGnJBGkyC77BQxRW4pmDVg=
+
+Name: com/sun/opengl/impl/tessellator/GLUface.class
+SHA1-Digest: IoLj2gMUbRt65gtK0bbdsoJy9X4=
+
+Name: com/sun/opengl/util/Animator.class
+SHA1-Digest: 88ALo+n7nbSLtSBlV5qFYjHFKVY=
+
+Name: com/sun/opengl/impl/GLContextShareSet$ShareSet.class
+SHA1-Digest: lKD36ANJTOz2Nwy+er0dzbNocew=
+
+Name: com/sun/opengl/impl/GLDrawableFactoryImpl$1.class
+SHA1-Digest: j8q/ulPXLvQLb9/JB0hJWv+qL7M=
+
+Name: com/sun/opengl/impl/nurbs/Breakpt.class
+SHA1-Digest: 3K+pIyrq0QC5npqW8veIDp4Sak4=
+
+Name: com/sun/opengl/impl/GLObjectTracker$8.class
+SHA1-Digest: J+pVbvqRRgA25r1G/tH7UwZd2L0=
+
+Name: com/sun/opengl/impl/tessellator/Geom.class
+SHA1-Digest: D9eJ9RlXWOcMEnsh+XOH3aHRGfw=
+
+Name: com/sun/opengl/impl/StaticGLInfo.class
+SHA1-Digest: yc0zW4sCRLHQV5g1B/ID8u7UAYw=
+
+Name: com/sun/opengl/cg/CgException.class
+SHA1-Digest: qaIxqPTaSnxznoziXdHgDjLD8T8=
+
+Name: com/sun/opengl/impl/GLPbufferImpl$DisplayOnEventDispatchThreadAc
+ tion.class
+SHA1-Digest: UR1o3oNEJmMTj0ktJoFu6r1m/HE=
+
+Name: com/sun/opengl/impl/GLBufferSizeTracker.class
+SHA1-Digest: KBFcxKCXQVpanI91J1lw+6OJsUg=
+
+Name: com/sun/opengl/impl/GLPbufferImpl$DisplayAction.class
+SHA1-Digest: kQeP++oSKV3n7+dx+WC2iuh7CpU=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$RenderDelegate.class
+SHA1-Digest: mW8Y023oKG7dgiCFZgQFSM7gvco=
+
+Name: com/sun/opengl/util/GLUTBitmap8x13.class
+SHA1-Digest: OtM2D4qtNFDkhq8zIA88J1dt1aY=
+
+Name: com/sun/opengl/impl/nurbs/OpenGLCurveEvaluator.class
+SHA1-Digest: ne6V++Cfz2deDmGrVA311rQI50g=
+
+Name: com/sun/opengl/impl/Java2DGLContext.class
+SHA1-Digest: IE+OSu++Pr5DLCpkGGPkUKqubVw=
+
+Name: com/sun/opengl/impl/tessellator/Render$1.class
+SHA1-Digest: 3ZubAh/+L3fVpRNEcCGM23/czSk=
+
+Name: com/sun/opengl/impl/tessellator/Render$RenderTriangle.class
+SHA1-Digest: pHBhVe2pf8aBTcHSBXgaY1ql7AU=
+
+Name: com/sun/opengl/impl/tessellator/Sweep$2.class
+SHA1-Digest: l60yjLB+QvbNI53MnegeXVt6wi8=
+
+Name: javax/media/opengl/GLJPanel$1.class
+SHA1-Digest: Fc8TxbVUxJcBD8tu5NVQzuNtVF0=
+
+Name: com/sun/opengl/impl/mipmap/Extract.class
+SHA1-Digest: 7TO0OEYhC0idA1mSo284BRXg1jM=
+
+Name: com/sun/opengl/impl/NativeLibLoader$3.class
+SHA1-Digest: nkNJIRabyXGUZRPTrB7whz/RPUs=
+
+Name: com/sun/opengl/impl/Debug.class
+SHA1-Digest: +gwNf6cQxGrMEhIuRf7/gb/5yhY=
+
+Name: com/sun/opengl/impl/nurbs/Splinespec.class
+SHA1-Digest: iSxnR3ItkBtZqopp3NhEAVH8BKU=
+
+Name: com/sun/opengl/impl/nurbs/TrimVertex.class
+SHA1-Digest: jlrZJkXzQDYKdjp8i3iyJF8JDXs=
+
+Name: com/sun/opengl/util/texture/TextureIO$DDSTextureWriter.class
+SHA1-Digest: 9l0f1MGuEwr3nfj3fsYMHIjc89Y=
+
+Name: com/sun/opengl/impl/mipmap/Extract8888rev.class
+SHA1-Digest: DNWHkAKvj2JsMFZl/lMNGdJzi3A=
+
+Name: com/sun/opengl/impl/GLObjectTracker$19.class
+SHA1-Digest: 7SMKhunDA9gc78XDNlUKxYLCUsU=
+
+Name: com/sun/opengl/impl/nurbs/Maplist.class
+SHA1-Digest: tA46kxuM8GA7Z/ecuIOVrnVMnFA=
+
+Name: com/sun/opengl/impl/nurbs/Patch.class
+SHA1-Digest: xZtsI0HKIZCxMJzi3ahRlTqE7lo=
+
+Name: com/sun/opengl/util/texture/TextureIO$DDSTextureProvider.class
+SHA1-Digest: GWP2TWqryWdqaduk2jN831kOTyc=
+
+Name: com/sun/opengl/impl/GLContextShareSet$1.class
+SHA1-Digest: XrR6tMnZoKQ7JmqavNBFMRg/6yU=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQSort$1.class
+SHA1-Digest: XC8YI3KGUY1cMU59e/GvAaX/Uqo=
+
+Name: com/sun/opengl/impl/windows/RGBQUAD32.class
+SHA1-Digest: BCs6oT+HvBwmlR6toevliWXBlvc=
+
+Name: com/sun/opengl/impl/tessellator/Dict$DictLeq.class
+SHA1-Digest: sqDniE6ed2X7fd/8wl88A2H+BtQ=
+
+Name: javax/media/opengl/glu/GLUnurbs.class
+SHA1-Digest: 55XS9vhC7ET5Mgb1nU+zaFxxuk0=
+
+Name: com/sun/opengl/impl/windows/BITMAPINFOHEADER64.class
+SHA1-Digest: cffyvD1h7MxJVe/6vIOiJHWhJWs=
+
+Name: com/sun/opengl/cg/CGcontext.class
+SHA1-Digest: VUeIjR/maMSyts8yE6cNiO9F+r8=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$1.class
+SHA1-Digest: XHIgfEWWzTlc6SnXXc2ZKpQQrrs=
+
+Name: com/sun/opengl/impl/nurbs/Flist.class
+SHA1-Digest: OuyJwJ2VgJRHxILbVv7U0ME7nq4=
+
+Name: com/sun/opengl/impl/GLWorkerThread$WorkerRunnable.class
+SHA1-Digest: HOiU7xsiDgq8CLMVYxiYYl0ELQw=
+
+Name: com/sun/opengl/impl/nurbs/CArrayOfArcs.class
+SHA1-Digest: iSj3fkM77M+zsEJ/U1UXJ/ucYm8=
+
+Name: com/sun/opengl/impl/nurbs/NurbsConsts.class
+SHA1-Digest: QzhrCOC3fHmtywoNTpZHDrWyy4s=
+
+Name: com/sun/opengl/impl/mipmap/Extract565rev.class
+SHA1-Digest: 2GDcVU9BQq2Hc/dHoVPR6TeWY+Q=
+
+Name: com/sun/opengl/impl/nurbs/ArcTesselator.class
+SHA1-Digest: 3JqHrkRto0jySlTlUpHB6bSc0Lg=
+
+Name: com/sun/opengl/impl/GLPbufferImpl$DestroyAction.class
+SHA1-Digest: hivRtLCCLwuMHkCWdMNWoJM6cN0=
+
+Name: javax/media/opengl/glu/GLUquadric.class
+SHA1-Digest: WFIOuchucvYcQ4ZcVMtNBgouuqY=
+
+Name: com/sun/opengl/impl/GLObjectTracker$3.class
+SHA1-Digest: n2E3X1NTKRcpuZKNcPiThJWrOUY=
+
+Name: com/sun/opengl/impl/tessellator/GLUvertex.class
+SHA1-Digest: BF7MpkFTdEmNuMYlu5GF0Kgbc8g=
+
+Name: com/sun/opengl/util/FileUtil.class
+SHA1-Digest: EIR30sQb8Rno5TaDcUENQNMo4BI=
+
+Name: com/sun/opengl/impl/GLContextLock.class
+SHA1-Digest: 2gWDzEjnNPbbru1g4agm65paFm8=
+
+Name: javax/media/opengl/GLDrawableFactory.class
+SHA1-Digest: K/2bKM5719XI8DwlXg7FvPk16X0=
+
+Name: com/sun/opengl/impl/windows/WindowsGLDrawableFactory$1.class
+SHA1-Digest: n0aGCLZ4ByoP3WMa7mMTYd04Iuc=
+
+Name: com/sun/opengl/impl/nurbs/Subdivider.class
+SHA1-Digest: 3tgDDGLa5j7JdzHO6ECV8I3D7JY=
+
+Name: com/sun/opengl/util/j2d/TextRenderer.class
+SHA1-Digest: mSprdpRRh0ZfeXiImbYpLkvy3b4=
+
+Name: com/sun/opengl/util/texture/spi/TextureWriter.class
+SHA1-Digest: NPKZFdUxjgShWoUj6/xAR1ii7Cg=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$2.class
+SHA1-Digest: R712Ds62UpMTCAwTViYOA5QkCkA=
+
+Name: com/sun/opengl/impl/macosx/MacOSXJava2DGLContext.class
+SHA1-Digest: t4NtLqZMv2OgbN1igyIb+ldA/cs=
+
+Name: com/sun/opengl/util/StrokeCharRec.class
+SHA1-Digest: vKS1WS2mfAeYWJFARrcvXiEkaHM=
+
+Name: com/sun/opengl/impl/InternalBufferUtils.class
+SHA1-Digest: Wh+u843Oy+xbUz7kIZcSOWP1wN0=
+
+Name: com/sun/opengl/impl/macosx/MacOSXOffscreenGLContext.class
+SHA1-Digest: tQBWeInEqq7JKpOpuPrRWx0Uznk=
+
+Name: com/sun/opengl/util/CoordRec.class
+SHA1-Digest: oaVMhZvdcpc0km1rBvEDReLvCU4=
+
+Name: com/sun/opengl/impl/mipmap/Extract5551.class
+SHA1-Digest: c2wI1Y5sCwAx1MjUeXabtrXQMlY=
+
+Name: com/sun/opengl/impl/mipmap/ScaleInternal.class
+SHA1-Digest: Ttv7R5w73IaLqpe+DoA3P1IY5jU=
+
+Name: com/sun/opengl/impl/GLImpl.class
+SHA1-Digest: Op+WQgXaEgLaDQyEUmOf46apWME=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$Pipelined_QuadRenderer.clas
+ s
+SHA1-Digest: Lf6IhGhCVss/zRnWYO+MekBvCmQ=
+
+Name: com/sun/opengl/impl/packrect/RectanglePacker.class
+SHA1-Digest: LSqFheWiZT1PX8crR85y083jxcg=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLContext$Impl.class
+SHA1-Digest: unjPYal4fBXsd957bfHhzkAEvgg=
+
+Name: com/sun/opengl/cg/CGstateassignment32.class
+SHA1-Digest: UdcE3BuC5OvbPUcAwtCqed3sdxE=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$TextData.class
+SHA1-Digest: IgC6R/TPJ+hIWx8u891/hoTOhxo=
+
+Name: com/sun/opengl/impl/Debug$1.class
+SHA1-Digest: TCLN9GHowb10B+rnTMIauPgfyrM=
+
+Name: com/sun/opengl/impl/GLObjectTracker$ObjectList.class
+SHA1-Digest: 7OC6TKcYtaB+KGNX5N0aElWCfrk=
+
+Name: com/sun/opengl/impl/GLContextShareSet.class
+SHA1-Digest: yipluOV9HaNhsFMi80KuGbPb7UY=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQ$PQnode.class
+SHA1-Digest: jOE9fH0q7+sw+lyYjNtXB0ZHxJI=
+
+Name: com/sun/opengl/impl/windows/WindowsExternalGLDrawable.class
+SHA1-Digest: YeXohWSPtDD/9aHols2GguC364g=
+
+Name: com/sun/opengl/impl/x11/DRIHack.class
+SHA1-Digest: z+pt2JwFmlGorGcg7RFc4OSsRQs=
+
+Name: com/sun/opengl/util/texture/TextureIO$TGATextureProvider.class
+SHA1-Digest: OJ3OyHsWSCWI5xw3dRhzJ1SYTH0=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLContext.class
+SHA1-Digest: J5+iA3yD1Ix8Cy7TvEDM1VRkV1c=
+
+Name: com/sun/opengl/impl/packrect/Level.class
+SHA1-Digest: BIJVeUzO2xv4TAdrgIxm1Lw/mf8=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$Manager.class
+SHA1-Digest: da68DBjcxVDPdl5ZizQXXmtwxcU=
+
+Name: com/sun/opengl/util/texture/TextureCoords.class
+SHA1-Digest: OAI8kayfU2EQf+iVWvTG1goVLx0=
+
+Name: com/sun/opengl/impl/GLUProcAddressTable.class
+SHA1-Digest: 0+WFUB8mpqlTIqhotCwOoqfXm+E=
+
+Name: com/sun/opengl/util/texture/spi/TGAImage$Header.class
+SHA1-Digest: MBhZ8hhhmTMLJ7YCbS80y851R+c=
+
+Name: com/sun/opengl/impl/GLObjectTracker$7.class
+SHA1-Digest: EGXJuq3h1VxreVymfR9tWtkazsI=
+
+Name: com/sun/opengl/impl/x11/X11ExternalGLContext.class
+SHA1-Digest: Gw0NmXVevYImTc3yZRBveHDsuG8=
+
+Name: com/sun/opengl/impl/x11/XVisualInfo32.class
+SHA1-Digest: dLzeFEuxveKk2q4e0Kr8AVQ7MVM=
+
+Name: com/sun/opengl/impl/x11/X11ExternalGLContext$Drawable.class
+SHA1-Digest: ZXt9a0mL8Jp14hHLAsWDVWHwPOU=
+
+Name: com/sun/opengl/impl/windows/WGL.class
+SHA1-Digest: quX1/Kl+iqs57xHobhtJEBCIu8Y=
+
+Name: javax/media/opengl/DebugGL.class
+SHA1-Digest: +Sv5W8we8cpdZgcRZ076oludaeg=
+
+Name: com/sun/opengl/impl/GLObjectTracker$4.class
+SHA1-Digest: +L3uTx1odxpo+obqNqaJryOqTcs=
+
+Name: com/sun/opengl/impl/mipmap/ExtractUShort.class
+SHA1-Digest: EPbeQ8H3dc7Wupn5bn9vP+c9PBA=
+
+Name: com/sun/opengl/impl/x11/X11SunJDKReflection$1.class
+SHA1-Digest: aTSis2AXDFqo4XssgDdvBMrtkpM=
+
+Name: javax/media/opengl/GL.class
+SHA1-Digest: T8RG1ZKWPw3zdHDyk/rb21oKKDs=
+
+Name: javax/media/opengl/GLJPanel$InitAction.class
+SHA1-Digest: vNuHLL/bfOovGMuNWcf1m7lz4dY=
+
+Name: com/sun/opengl/impl/GLObjectTracker$2.class
+SHA1-Digest: 22wHuECsXsJLUqK42cqCe0hWc+E=
+
+Name: com/sun/opengl/impl/nurbs/O_pwlcurve.class
+SHA1-Digest: kV6IY3lor8JpTCCN8FuaZx0ZOO4=
+
+Name: com/sun/opengl/impl/NativeLibLoader$4.class
+SHA1-Digest: dzDF3EaznBBls7GmWITmBy3fNtM=
+
+Name: com/sun/opengl/util/Screenshot$PixelStorageModes.class
+SHA1-Digest: KHfnVgrD7mVYN2k2kxafFoIWx/o=
+
+Name: com/sun/opengl/impl/tessellator/Render$renderCallBack.class
+SHA1-Digest: 7miqffnfL5OV0Ht2FNG1Sr97fBI=
+
+Name: javax/media/opengl/glu/GLUtessellatorCallbackAdapter.class
+SHA1-Digest: AVdx3Pz+9YkwPOA79z/yyQQ3zbk=
+
+Name: com/sun/opengl/cg/CGannotation32.class
+SHA1-Digest: lgF4PH1Xl8xaVVkqn+krvKy6zbI=
+
+Name: com/sun/opengl/util/StreamUtil.class
+SHA1-Digest: PmYdchirUkBGLjrJpuF7ql5cqAc=
+
+Name: javax/media/opengl/glu/GLU$1.class
+SHA1-Digest: fYHa3NcUwBlzO36SOM//YuHb7tU=
+
+Name: com/sun/opengl/impl/x11/GLXExtProcAddressTable.class
+SHA1-Digest: KZEDXKdJlbi+ZPgKvW29oAlL1Dw=
+
+Name: com/sun/opengl/impl/x11/X11SunJDKReflection.class
+SHA1-Digest: lFfX6BMjlYcXOPHSn2Iwb6PZIxs=
+
+Name: com/sun/opengl/impl/macosx/MacOSXOnscreenGLDrawable.class
+SHA1-Digest: rrT+a8eNGp4Xh1LLvUGkKPVb7/8=
+
+Name: com/sun/opengl/impl/GLDrawableImpl.class
+SHA1-Digest: 2u8UUQaug9ASpmXUi/VBaEBo3p8=
+
+Name: com/sun/opengl/impl/x11/X11GLContext.class
+SHA1-Digest: Qk2U84holhV+ugwRBnP9hfBVn5U=
+
+Name: com/sun/opengl/impl/windows/WindowsPbufferGLDrawable.class
+SHA1-Digest: aI6TFPeyoAfqkNsj5bMO7L/8mYQ=
+
+Name: com/sun/opengl/cg/CGprogram64.class
+SHA1-Digest: MOixwfRyRDgN27XFOds1SC6lQSA=
+
+Name: com/sun/opengl/impl/tessellator/DictNode.class
+SHA1-Digest: N7BMLbKTIADoiybiTlmgEajVO00=
+
+Name: com/sun/opengl/cg/CGpass32.class
+SHA1-Digest: sXUh/7qK0ecBWidvNNlyytnaRAc=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$5.class
+SHA1-Digest: gmvql2G037A3vQtg1E83UOj/Lz0=
+
+Name: com/sun/opengl/cg/CGparameter.class
+SHA1-Digest: QRHLp5MI9bbCIP9g7bb/T+IMoF0=
+
+Name: com/sun/opengl/impl/mipmap/Extract332.class
+SHA1-Digest: Mil1aiLL+y/FDL4oFnBHR5F6nLA=
+
+Name: com/sun/opengl/util/texture/TextureIO$SGITextureWriter.class
+SHA1-Digest: w0pYtXM12asUpEmyx32/vzW6pZM=
+
+Name: com/sun/opengl/impl/x11/GLXHyperpipeNetworkSGIX.class
+SHA1-Digest: fs6TGZGZYIF8nbzm+BDZ2fLn35g=
+
+Name: com/sun/opengl/impl/nurbs/ArcTdirSorter.class
+SHA1-Digest: gj57LPcagtIvfLXEWc7Fve34FPw=
+
+Name: com/sun/opengl/impl/windows/WindowsGLContext.class
+SHA1-Digest: LG7vALBy1iuSBfDE5NA1zp8+et4=
+
+Name: com/sun/opengl/impl/GLObjectTracker$10.class
+SHA1-Digest: K+qyan5IYIGmtIJu6H1kCnRi1fA=
+
+Name: com/sun/opengl/impl/tessellator/Mesh.class
+SHA1-Digest: qj+/9nHeDD2FM3qW/tz8NPiDCL0=
+
+Name: com/sun/opengl/impl/x11/X11GLDrawableFactory$1.class
+SHA1-Digest: 0VNdTeH9Ve+gOW4n6VY6YTamFIM=
+
+Name: com/sun/opengl/impl/windows/RECT64.class
+SHA1-Digest: 1bje2HTePiOn5HlelALcVoSEd9g=
+
+Name: com/sun/opengl/util/texture/TextureIO$1.class
+SHA1-Digest: B5f7QcNWP+XZfy20Mb0pkVeI6+Q=
+
+Name: javax/media/opengl/glu/GLUtessellator.class
+SHA1-Digest: 5AJmcewCXZQ+ku+mMtpnjAT5ywQ=
+
+Name: com/sun/opengl/impl/JAWT.class
+SHA1-Digest: j5tS/5b40b40rugzSn7RdvSfcss=
+
+Name: com/sun/opengl/impl/windows/RGBQUAD.class
+SHA1-Digest: FYKfDipEoQ3/3cbYK2AtoYL/QGQ=
+
+Name: com/sun/opengl/cg/CGpass64.class
+SHA1-Digest: vpjVUfjRd+7a2oGrZNZYz/d05YY=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurfaceInfo$1.class
+SHA1-Digest: OMAt8E/qOgIKLz0PLVk2pbztci8=
+
+Name: com/sun/opengl/impl/windows/PIXELFORMATDESCRIPTOR32.class
+SHA1-Digest: 3N99GR3vABFhC+B/4GLcAltlYCs=
+
+Name: com/sun/opengl/impl/macosx/MacOSXOffscreenGLDrawable.class
+SHA1-Digest: fzgsVPJG7U1xDFFWFqDEmYxudII=
+
+Name: com/sun/opengl/impl/mipmap/Extract1010102.class
+SHA1-Digest: /rNDZA3LdowgH9VHe0s2X4EHboE=
+
+Name: com/sun/opengl/impl/mipmap/ExtractSInt.class
+SHA1-Digest: LHsnpB+PYp1V3E48nRO18CXW19I=
+
+Name: com/sun/opengl/impl/Java2D$2.class
+SHA1-Digest: VuA+4kRfSPRT2YcwSdbZz7DCcKY=
+
+Name: com/sun/opengl/impl/Util.class
+SHA1-Digest: ErMf5k70VPN0AYbIojMz8UjLMns=
+
+Name: com/sun/opengl/util/texture/spi/LEDataInputStream.class
+SHA1-Digest: 1aUu+K3ZTSCIHqLruypEgWg4Gac=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$3.class
+SHA1-Digest: BjSzOQSS8zZISF25tEd71s1Eqo8=
+
+Name: com/sun/opengl/util/Screenshot.class
+SHA1-Digest: v4xdGNekIMd+AakfkYvU/bjNmWA=
+
+Name: com/sun/opengl/impl/NativeLibLoader$DefaultAction.class
+SHA1-Digest: ReS9VeKJY1qBAeTkz/ULbsLmzm4=
+
+Name: com/sun/opengl/impl/x11/X11GLDrawableFactory$ScreenAndVisualIDKe
+ y.class
+SHA1-Digest: 17uqWT/DcSxb+y9iXR0/DY8Pn2I=
+
+Name: com/sun/opengl/impl/GLObjectTracker$6.class
+SHA1-Digest: 9smGa+Y5P44fbveshm1iKF9M1W0=
+
+Name: javax/media/opengl/GLJPanel.class
+SHA1-Digest: rvNka0qy1d7Xx9nOM92Hcslx8T4=
+
+Name: javax/media/opengl/GLJPanel$3.class
+SHA1-Digest: 6/aQWWG2MMDJdRzyOTsU9FCH5qY=
+
+Name: com/sun/opengl/impl/JAWT_Rectangle64.class
+SHA1-Digest: V1jmnK6NHCx0oPXLJpQaqwBiyz4=
+
+Name: com/sun/opengl/util/BufferUtil.class
+SHA1-Digest: VQeUmgGUtI+jUwttuc9ctCDqjWc=
+
+Name: com/sun/opengl/impl/x11/X11OffscreenGLDrawable.class
+SHA1-Digest: shV0jcJUgL7X+8u8FAvKiP1QGzo=
+
+Name: com/sun/opengl/impl/mipmap/Extract233rev.class
+SHA1-Digest: KdfraJhdEzTMw4OBCRTK43CR308=
+
+Name: com/sun/opengl/impl/tessellator/GLUmesh.class
+SHA1-Digest: yLoVFMj5tl/zI0WohLCOtvU34Jo=
+
+Name: com/sun/opengl/impl/tessellator/Sweep$1.class
+SHA1-Digest: mcG3UYx2IXQ9EzrTlNpAYz6ot+Y=
+
+Name: com/sun/opengl/impl/windows/GPU_DEVICE64.class
+SHA1-Digest: RfjKVHFHs6uQfmhXhMMMj0MmhHs=
+
+Name: com/sun/opengl/impl/NativeLibLoader.class
+SHA1-Digest: 5iVwJpfB4wn5GtumhbWAppZw020=
+
+Name: com/sun/opengl/impl/GLContextImpl.class
+SHA1-Digest: j5cpTuzeGLn+PoSQPsWnxeIqomY=
+
+Name: com/sun/opengl/impl/x11/XVisualInfo.class
+SHA1-Digest: JcdZd0TEq7LMMHPGnjK/CZ98mcM=
+
+Name: com/sun/opengl/util/texture/TextureIO$IIOTextureWriter.class
+SHA1-Digest: vCkHKJlq5P27+Y3Kc1Ghon28O3U=
+
+Name: com/sun/opengl/impl/x11/X11ExternalGLDrawable.class
+SHA1-Digest: hdfF4QPF0OFIU4YZCKz5pa7FJmg=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQ.class
+SHA1-Digest: vPPPirouZ1lBra4aR3KyL+x20Jo=
+
+Name: com/sun/opengl/impl/tessellator/GLUtessellatorImpl.class
+SHA1-Digest: uZ3CjJyklzOlbA8LDSe9/i/uyKE=
+
+Name: com/sun/opengl/impl/mipmap/ExtractSByte.class
+SHA1-Digest: guLXTaoZ09jryggT7Uly26a+s9o=
+
+Name: com/sun/opengl/impl/NativeLibLoader$1.class
+SHA1-Digest: 6RxMlPbYsRwzc200WAFNKs3RMUs=
+
+Name: com/sun/opengl/cg/CGtechnique32.class
+SHA1-Digest: v4Dx5KzssibSvb+kK4H6KLekaQk=
+
+Name: com/sun/opengl/impl/mipmap/Extract8888.class
+SHA1-Digest: suUCcPSBdyq1/pC08Hzz7C7lsRs=
+
+Name: com/sun/opengl/impl/mipmap/Extract2101010rev.class
+SHA1-Digest: Hc35zItYWwlCpIBB3nm9gE7vFwg=
+
+Name: com/sun/opengl/impl/nurbs/Arc.class
+SHA1-Digest: X4vjFfbBrXViHchuk0czSCrkTfw=
+
+Name: com/sun/opengl/impl/nurbs/GLUnurbsImpl.class
+SHA1-Digest: ehbVv4gkmv3oJento07MD0NCkBg=
+
+Name: com/sun/opengl/impl/tessellator/CachedVertex.class
+SHA1-Digest: ZMXPAz2YTtOhdr3ymZepq0nNoOI=
+
+Name: com/sun/opengl/util/GLUTBitmapHelvetica18.class
+SHA1-Digest: QtMwhgWxWYH40nUBAL+PP85cccE=
+
+Name: com/sun/opengl/cg/CGannotation.class
+SHA1-Digest: qf34ZxPR0KHRLNax/467SxiqZak=
+
+Name: com/sun/opengl/impl/x11/GLXExtImpl.class
+SHA1-Digest: /kwzmBm0A4e8PfJ6PAYTfjyijYY=
+
+Name: com/sun/opengl/impl/x11/X11GLDrawableFactory.class
+SHA1-Digest: xcWYEF5dksvSl46Uw3nfpPJh1UQ=
+
+Name: com/sun/opengl/impl/windows/WindowsGLDrawableFactory$2.class
+SHA1-Digest: V4LbnJYEa8YWCVP68MSKU5adxUU=
+
+Name: com/sun/opengl/util/Gamma.class
+SHA1-Digest: BwZHSQgalz2g7qI3IMmmR6FgdX4=
+
+Name: com/sun/opengl/util/GLUTBitmapTimesRoman10.class
+SHA1-Digest: 3/vDFuVgPOEfOJFCCt41e+BRPE8=
+
+Name: com/sun/opengl/impl/tessellator/Render$RenderFan.class
+SHA1-Digest: O0iXZ3P8Pcynq6nU2l9hRNX0s1I=
+
+Name: com/sun/opengl/impl/Project.class
+SHA1-Digest: vZSuqaMGcFEv5gPUwTYx/TawTT4=
+
+Name: com/sun/opengl/impl/x11/X11OnscreenGLContext.class
+SHA1-Digest: 4BOnMY3A3RtYfzkg7Ieq4fmm/jo=
+
+Name: com/sun/opengl/cg/CGcontext32.class
+SHA1-Digest: aT99L0+cB/eCRqv14YltxqAlBHA=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurfaceInfo64.class
+SHA1-Digest: I2Fjs84okNp0YTfCsSEBs+v3XDI=
+
+Name: com/sun/opengl/impl/NativeLibLoader$2.class
+SHA1-Digest: 5STEyNQqFe++9BkOTLB0atM67wY=
+
+Name: javax/media/opengl/GLCanvas$InitAction.class
+SHA1-Digest: JIRTPgAfJOJVMCR/n8fOWSTz9U8=
+
+Name: com/sun/opengl/util/BitmapCharRec.class
+SHA1-Digest: TmAJIKYX//y0ooif/d+ZnUgBuvg=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQ$Leq.class
+SHA1-Digest: DkaSsH0qJRhXVGfS+dFIikY9HWE=
+
+Name: com/sun/opengl/util/texture/TextureIO$TGATextureWriter.class
+SHA1-Digest: 6SvA/U0YfsCyc6qCYh5PXYbAUas=
+
+Name: com/sun/opengl/impl/mipmap/ExtractSShort.class
+SHA1-Digest: c5hdFgry3ifTCICvMh9kS7TgdpI=
+
+Name: com/sun/opengl/impl/tessellator/TessMono.class
+SHA1-Digest: +6Ts1fLI6jrtEd5L+iG5Es9QfIs=
+
+Name: com/sun/opengl/impl/macosx/MacOSXGLDrawable.class
+SHA1-Digest: jbHnprSm2uI3h8fBue7OZ+sv6Ms=
+
+Name: com/sun/opengl/impl/windows/WindowsOnscreenGLDrawable.class
+SHA1-Digest: fWTLHUxmZwwDTtvJAQ9DzroI2qI=
+
+Name: com/sun/opengl/util/GLUTStrokeMonoRoman.class
+SHA1-Digest: OfBXYR6eDaKGd3qLBB4PRdLVzmg=
+
+Name: com/sun/opengl/impl/JAWT_PlatformInfo.class
+SHA1-Digest: FmrQ5msjL8o7yMzzM9Nfepb6J+0=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLDrawable$Impl.class
+SHA1-Digest: fBwD9GDt6DzJbEs/PrqcCzykXks=
+
+Name: com/sun/opengl/impl/nurbs/BezierArc.class
+SHA1-Digest: DpP9+bVDzXNchkorpIcwfvPC5h4=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$1.class
+SHA1-Digest: iczKPHS/xGbD6ahBSidAPR5DU8M=
+
+Name: com/sun/opengl/impl/JAWT32.class
+SHA1-Digest: E5nX1vJ0PxO6oQAfQbl5+SeW+eA=
+
+Name: javax/media/opengl/GLException.class
+SHA1-Digest: 5CxiDv+gtZPX8wCsU2DLGGKVxh4=
+
+Name: com/sun/opengl/impl/macosx/MacOSXGLDrawableFactory.class
+SHA1-Digest: 2xKpoI8yS3dtfm/hY8alXh6l1no=
+
+Name: com/sun/opengl/util/texture/spi/DDSImage$Header.class
+SHA1-Digest: NWrQhMpjBNsbquUqgTICykc0wCM=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$4.class
+SHA1-Digest: xmY0uK7sUf4nNwlz5Lae87NOWq0=
+
+Name: javax/media/opengl/GLPbuffer.class
+SHA1-Digest: NuZMGB4GXRtq7nlEleIFb5ViIDQ=
+
+Name: com/sun/opengl/impl/nurbs/Property.class
+SHA1-Digest: 3TpnV90DKMQJs9yPHwyI65t9ydw=
+
+Name: com/sun/opengl/cg/CGstateassignment.class
+SHA1-Digest: TBUCPkgOZx/JMQnWn+lUdt0ag8A=
+
+Name: com/sun/opengl/impl/mipmap/ExtractPrimitive.class
+SHA1-Digest: 82CMsg5mEwSM8IGWU5S44u7NSjg=
+
+Name: javax/media/opengl/GLCanvas$SwapBuffersAction.class
+SHA1-Digest: DpStprD6pKvONgP+r3z6sr+JK7Q=
+
+Name: com/sun/opengl/impl/GLPbufferImpl$InitAction.class
+SHA1-Digest: kr0RKjqVxiolvrN1ey8MNTStMkI=
+
+Name: com/sun/opengl/impl/macosx/CGLExtProcAddressTable.class
+SHA1-Digest: iJJuRLToYB8mnFRjyZWkn7m7zMU=
+
+Name: com/sun/opengl/impl/x11/X11ExternalGLDrawable$Context.class
+SHA1-Digest: UX+AM0QuSAsyo8bNDFKqpn/5eQk=
+
+Name: com/sun/opengl/impl/NativeLibLoader$LoaderAction.class
+SHA1-Digest: srDZ3y+TXvb3LCJY8Gvrxio3Eoo=
+
+Name: com/sun/opengl/cg/CGparameter32.class
+SHA1-Digest: MUKhLXGH0a2LbqOeL8oHe5qNq20=
+
+Name: javax/media/opengl/glu/GLUtessellatorCallback.class
+SHA1-Digest: Ttrl9QNR0YFK6QgEKF1VIqhe/TI=
+
+Name: com/sun/opengl/impl/GLPbufferImpl.class
+SHA1-Digest: N44wxcMdgSvLzcYkF/yEiGTEWjA=
+
+Name: com/sun/opengl/impl/GLPbufferImpl$SwapBuffersAction.class
+SHA1-Digest: dWx4z2B2krnb8MBBk2hbhdKC9HU=
+
+Name: com/sun/opengl/impl/JAWT64.class
+SHA1-Digest: W4C+vf8z1u+lfHKhuN81NIhmsyU=
+
+Name: com/sun/opengl/impl/GLProcAddressTable.class
+SHA1-Digest: rhpSYdgkNUgdMWS+4+gSsqrMxNE=
+
+Name: com/sun/opengl/impl/macosx/JAWT_MacOSXDrawingSurfaceInfo32.class
+SHA1-Digest: iZY2TQq0CEmrox9HCZ+48ypT1iA=
+
+Name: com/sun/opengl/util/FPSAnimator.class
+SHA1-Digest: CHYxI9jT0vdF1gTEgI9WNBzuA64=
+
+Name: com/sun/opengl/impl/nurbs/OpenGLSurfaceEvaluator.class
+SHA1-Digest: re12gDgdI1A9IkdwRdu3GT/wuyY=
+
+Name: com/sun/opengl/cg/CGstate32.class
+SHA1-Digest: i0pZkQW7gIWn2MwfLjvL6EzBhIQ=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$AppletStubProxy.class
+SHA1-Digest: IqMZR4W3poxsZLjcEzAgBfvxvRs=
+
+Name: com/sun/opengl/impl/x11/X11GLDrawable.class
+SHA1-Digest: jdhE9GpVv0pQu3ul5Uw7dZbKqMg=
+
+Name: com/sun/opengl/impl/nurbs/Renderhints.class
+SHA1-Digest: 6sEwHfy8yrx1CoR0YA9c8Pppxz8=
+
+Name: com/sun/opengl/impl/macosx/JAWT_MacOSXDrawingSurfaceInfo64.class
+SHA1-Digest: lf1VOe5ZWOkPz5o6MmfOrZPIQlA=
+
+Name: com/sun/opengl/impl/mipmap/ExtractUByte.class
+SHA1-Digest: 8adnNL+iTgAbbFyfGJRypFHiKbA=
+
+Name: com/sun/opengl/impl/GLWorkerThread.class
+SHA1-Digest: kNBeO4xFejhW10sQOTcxHW19Nxk=
+
+Name: com/sun/opengl/impl/tessellator/GLUhalfEdge.class
+SHA1-Digest: +breg/AYq4NPQJnGjZdapLuH5tQ=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$6.class
+SHA1-Digest: XnGJlQ+jPn0GfZpjKex3PBrhSmw=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$Glyph.class
+SHA1-Digest: GR5rhaeWCvqWVsXbpnoniD71EBU=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLContext$NSOpenGLImpl.c
+ lass
+SHA1-Digest: BY9eF6WrEDiPdonfcUC0wi4xkx0=
+
+Name: com/sun/opengl/util/texture/spi/TextureProvider.class
+SHA1-Digest: 0SOw/XC0Llkp3FdSRNTjHgeJOeA=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$CharSequenceIterator.class
+SHA1-Digest: yvlpz1FrCgrVBgB0lQFQTwrY7Fc=
+
+Name: com/sun/opengl/cg/CGpass.class
+SHA1-Digest: /To2moNYKidTjwM/tt9U0p0VnVk=
+
+Name: com/sun/opengl/impl/windows/JAWT_Win32DrawingSurfaceInfo32.class
+SHA1-Digest: r8/aex22I7zbBClDkrDl7hYGY5o=
+
+Name: com/sun/opengl/impl/GLContextImpl$1.class
+SHA1-Digest: l5C2ja/4OqTB0VmZLakmpppANIU=
+
+Name: com/sun/opengl/util/TileRenderer.class
+SHA1-Digest: UqzuIKHXC4NNWtX+YcuJ52ogAsc=
+
+Name: com/sun/opengl/impl/packrect/Rect.class
+SHA1-Digest: U6+iIwUobniHosa3NlCDtZsKv/E=
+
+Name: com/sun/opengl/cg/CGtechnique64.class
+SHA1-Digest: f1JIxApq1nvdI3K5AGnW57xKQjM=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQ$PQhandleElem.class
+SHA1-Digest: 2s8rNlYmvStk0WakZRC8phO2kIk=
+
+Name: com/sun/opengl/impl/windows/PIXELFORMATDESCRIPTOR64.class
+SHA1-Digest: GOfL9qRjBML7wqIzs0O7t9Mxgeg=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQHeap.class
+SHA1-Digest: bFdG/Pj71Ixx4uLlY9nBN993hYU=
+
+Name: com/sun/opengl/impl/x11/GLXHyperpipeConfigSGIX32.class
+SHA1-Digest: LdNZHhlq6GQ4GOne7gLjeLX5pRU=
+
+Name: com/sun/opengl/impl/x11/GLXFBConfig32.class
+SHA1-Digest: 5R3mBvNI8xJnYfzV+6xMkmmVL28=
+
+Name: com/sun/opengl/impl/windows/WindowsOnscreenGLContext.class
+SHA1-Digest: lzRnMDyKXV278TfSEiBfyNBDNk8=
+
+Name: javax/media/opengl/GLDrawableFactory$1.class
+SHA1-Digest: h1eq/JMGvX3H+T0oIVCEkHa+CXE=
+
+Name: com/sun/opengl/util/texture/spi/SGIImage$Header.class
+SHA1-Digest: WVBmkrD0ertjNSZN2MTYO4zjGRk=
+
+Name: com/sun/opengl/impl/windows/BITMAPINFO32.class
+SHA1-Digest: oqUm3SEEzoY21+sXnVUmQaW23I8=
+
+Name: com/sun/opengl/impl/windows/WindowsGLDrawable.class
+SHA1-Digest: x8llkS0FbOLhZ8HPN2RQaCmgELs=
+
+Name: com/sun/opengl/impl/x11/JAWT_X11DrawingSurfaceInfo64.class
+SHA1-Digest: a/4PyciDgv8mS6pkCMYG7KmZ+D8=
+
+Name: javax/media/opengl/Threading$1.class
+SHA1-Digest: +JC062Y06/HK9yUYpcaA3uMTOgw=
+
+Name: javax/media/opengl/GLCanvas$SwapBuffersOnEventDispatchThreadActi
+ on.class
+SHA1-Digest: FIH3aiG2H6WNKfRKv41SkAJs0io=
+
+Name: com/sun/opengl/impl/packrect/RectanglePacker$RectHComparator.cla
+ ss
+SHA1-Digest: uQlI3mrAof7w69E/P3zywCmdRs4=
+
+Name: com/sun/opengl/util/BitmapFontRec.class
+SHA1-Digest: UiJruv/0cs1EqsXASTfApAdqYHg=
+
+Name: com/sun/opengl/impl/nurbs/CArrayOfBreakpts.class
+SHA1-Digest: DJ5NsvzMZUqbnL767lXAv1efYeM=
+
+Name: com/sun/opengl/impl/tessellator/Render$FaceCount.class
+SHA1-Digest: OO9gjf78h4owGjkLiZL7iIfFnWE=
+
+Name: com/sun/opengl/impl/tessellator/TessState.class
+SHA1-Digest: 2vR68v9JEYi1PjfNzQbEKGVXNPk=
+
+Name: com/sun/opengl/impl/mipmap/HalveImage.class
+SHA1-Digest: 5Dr9/QZowvnecm15VE3YUFYYwq4=
+
+Name: com/sun/opengl/cg/CGstate.class
+SHA1-Digest: 7pGzU5ag4fZOk6vKLEatH8Gchuc=
+
+Name: com/sun/opengl/util/FPSAnimator$1.class
+SHA1-Digest: 7fgDALEtmKMWg9KBzfJRMREgbyg=
+
+Name: com/sun/opengl/impl/tessellator/Sweep.class
+SHA1-Digest: PHLtLRbmcJ+jG5w5B3BjFQ4hzpY=
+
+Name: com/sun/opengl/impl/mipmap/PixelStorageModes.class
+SHA1-Digest: kzeoDi6iR0YmdyuL6zedxpS/KPg=
+
+Name: com/sun/opengl/impl/nurbs/O_curve.class
+SHA1-Digest: SPaMe1MuUW7D37MVMv1d2alGCZg=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurface.class
+SHA1-Digest: yeo3Agi0RNWzZTt96wcDOjmDRgs=
+
+Name: com/sun/opengl/impl/windows/BITMAPINFOHEADER.class
+SHA1-Digest: JZuZjtfMSqiSjdwIHe6wX5bZBZc=
+
+Name: com/sun/opengl/impl/windows/RECT32.class
+SHA1-Digest: ZGP0XytRyb73dNFMEPW+UJa8T+8=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$3.class
+SHA1-Digest: elTD3ci1zY/5dkSR4Fj6ybrilPk=
+
+Name: com/sun/opengl/util/texture/TextureIO$StreamBasedTextureProvider
+ .class
+SHA1-Digest: oI28bsGLY+4AqQujzfpfNA2an5Q=
+
+Name: javax/media/opengl/GLCapabilitiesChooser.class
+SHA1-Digest: wtGtCDY6Z2LrNirSQti6rza0UHc=
+
+Name: com/sun/opengl/impl/nurbs/Mapdesc.class
+SHA1-Digest: lxn0T8Y0eKlw2jCCU+5uvLDblgU=
+
+Name: com/sun/opengl/impl/macosx/CGLExt.class
+SHA1-Digest: P0MgWpkO80rakXEyt4L0HflTJpQ=
+
+Name: com/sun/opengl/util/j2d/TextureRenderer.class
+SHA1-Digest: v2TZIYQ13TFz9jZY7Mhagtkq6Ys=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$2.class
+SHA1-Digest: uO0Cn5bRHotPlLo4G2y82OaVjaU=
+
+Name: com/sun/opengl/impl/nurbs/ArcSdirSorter.class
+SHA1-Digest: WugCroGw6I6X2CM/cen423Vz/YQ=
+
+Name: com/sun/opengl/impl/windows/JAWT_Win32DrawingSurfaceInfo64.class
+SHA1-Digest: DH3XbhdBFsAYmAoxL4JSHTXvm6s=
+
+Name: com/sun/opengl/impl/x11/GLXHyperpipeNetworkSGIX32.class
+SHA1-Digest: aUfxOC9kdRSGj8nBB+SzFiCfqdk=
+
+Name: com/sun/opengl/impl/x11/GLX.class
+SHA1-Digest: jdJguQhkJNnM08lM/KKivvCXvik=
+
+Name: javax/media/opengl/GLCanvas.class
+SHA1-Digest: j3IdhIUpGEUJ2vwyVH/tKXRXTpo=
+
+Name: com/sun/opengl/impl/x11/GLXProcAddressTable.class
+SHA1-Digest: KkH21UaYJ94dF0lIyL7WpG0uANk=
+
+Name: com/sun/opengl/impl/windows/WindowsOffscreenGLContext.class
+SHA1-Digest: IXDTsVuPL+3005v0D+7JMFGn+BQ=
+
+Name: com/sun/opengl/cg/CGannotation64.class
+SHA1-Digest: x8ubt49WKYuzx0xQuC1Z/MDb/b8=
+
+Name: com/sun/opengl/impl/nurbs/O_trim.class
+SHA1-Digest: MS0b1UzUlGLRiHxhe598OyGLv1M=
+
+Name: com/sun/opengl/impl/error/Error.class
+SHA1-Digest: vB8CxAbDhlqZWENzmGM5hdhRKjU=
+
+Name: com/sun/opengl/impl/windows/BITMAPINFO64.class
+SHA1-Digest: 6dMkkSfMSNt6q36w+Oic4venVwg=
+
+Name: com/sun/opengl/util/texture/spi/TGAImage.class
+SHA1-Digest: yUnTY32pqdUP/BGRJkQhBBVTm3w=
+
+Name: com/sun/opengl/impl/nurbs/CArrayOfQuiltspecs.class
+SHA1-Digest: 3QsrN4ihJchs6KwuDsCuTb62F4E=
+
+Name: javax/media/opengl/GLJPanel$PaintImmediatelyAction.class
+SHA1-Digest: a9hwvnS0kuSIJ+RwbOLcxL0Ck6g=
+
+Name: com/sun/opengl/util/GLUTBitmapTimesRoman24.class
+SHA1-Digest: t6hgB2I5ezxsDog4csGNEhLqR+4=
+
+Name: com/sun/opengl/util/GLUTBitmapHelvetica12.class
+SHA1-Digest: 7xu8iSGWwdkiR/SbnGCfmiH0lzg=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$DebugListener.class
+SHA1-Digest: GMj2V3p3Ey96TdKXV2JfI+8Mgc8=
+
+Name: com/sun/opengl/impl/GLObjectTracker$17.class
+SHA1-Digest: Q08ZONNPkMfnJt9CdlmChFO8QFg=
+
+Name: com/sun/opengl/cg/CGeffect.class
+SHA1-Digest: NcSYLRj07fL3lS3tpHkI9H/Cme0=
+
+Name: com/sun/opengl/impl/windows/GPU_DEVICE.class
+SHA1-Digest: H1O2tu/3xXTWjBPfoxNFjCws71I=
+
+Name: com/sun/opengl/impl/windows/GPU_DEVICE32.class
+SHA1-Digest: nyC/EHMvyhgE+NOfmKcKOxmb3hg=
+
+Name: com/sun/opengl/impl/x11/GLXFBConfig64.class
+SHA1-Digest: YZZgvdIY0DALh/dEpdNorZ/uZW8=
+
+Name: com/sun/opengl/cg/CGprogram32.class
+SHA1-Digest: DFti8RXPhqhd3lfAoEltjUnVQ8Y=
+
+Name: com/sun/opengl/util/GLUTStrokeRoman.class
+SHA1-Digest: eTBeuffeYUB1Xc7SIa/DMk5ln6U=
+
+Name: com/sun/opengl/impl/FunctionAvailabilityCache.class
+SHA1-Digest: NAT4ahRdCGqNz4xodkn971y75cY=
+
+Name: com/sun/opengl/impl/GLObjectTracker$9.class
+SHA1-Digest: mZ1adjNKZY9iyjJ0IG5Kv84uA84=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLContext$CGLImpl.class
+SHA1-Digest: b0EHnUHAnsqr8i7yzyV5EmImuG4=
+
+Name: com/sun/opengl/impl/JAWTFactory.class
+SHA1-Digest: 2z3esltF6gz9tR/eqm3A7FrYtKc=
+
+Name: com/sun/opengl/impl/windows/BITMAPINFO.class
+SHA1-Digest: sUBS4FBeGVMejei8nqbQyYtWR74=
+
+Name: com/sun/opengl/util/texture/spi/DDSImage.class
+SHA1-Digest: fisLEFtHKlxdwezyjvC066p9u60=
+
+Name: com/sun/opengl/impl/GLObjectTracker$14.class
+SHA1-Digest: uuDX+diR3kUJjS08k2nvmd54dlY=
+
+Name: com/sun/opengl/impl/nurbs/Pspec.class
+SHA1-Digest: m1UkZ0qXVj5m7ZsUcgjhwoQSZy8=
+
+Name: javax/media/opengl/GLCapabilities.class
+SHA1-Digest: UFVvdruRMAkNS8RRObVvmcRRigk=
+
+Name: com/sun/opengl/cg/CGparameter64.class
+SHA1-Digest: YCqkjXdRkFU+v/EpSXmeShLYawM=
+
+Name: com/sun/opengl/impl/Debug$2.class
+SHA1-Digest: lAvpggTpa9fhAZ7eceioF+h+do4=
+
+Name: javax/media/opengl/GLCanvas$DisplayOnEventDispatchThreadAction.c
+ lass
+SHA1-Digest: p/FyBCvOgA+BbWUBkkl6T/Z9Zu0=
+
+Name: com/sun/opengl/impl/x11/X11PbufferGLDrawable.class
+SHA1-Digest: KtqyEqxex3q18FQnRoWG9pqcHho=
+
+Name: com/sun/opengl/impl/Java2D.class
+SHA1-Digest: mk1dN+jCZ+KbJ1q/1QfrCby6P1Q=
+
+Name: com/sun/opengl/impl/macosx/MacOSXGLDrawableFactory$1.class
+SHA1-Digest: 9IbnFqJb2rJ3sIVXz0PHG3gS5/c=
+
+Name: com/sun/opengl/impl/x11/GLXHyperpipeConfigSGIX.class
+SHA1-Digest: qyYukT1QazvSWYsMRB3ZcRgmID0=
+
+Name: javax/media/opengl/AbstractGraphicsDevice.class
+SHA1-Digest: yeA3AGkfu3u804TqEWwytMUwO3k=
+
+Name: com/sun/opengl/impl/nurbs/Quilt.class
+SHA1-Digest: 2jactFVCRs/X4VUdzlhdgnyg7cQ=
+
+Name: com/sun/opengl/impl/tessellator/PriorityQSort.class
+SHA1-Digest: 1iJ+Wexu3T4at9eb2Txu8/6BUYc=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLDrawable.class
+SHA1-Digest: 7M+lAVsCpzm17PpLtFAailLPp7k=
+
+Name: com/sun/opengl/cg/CGeffect64.class
+SHA1-Digest: 1yekiMDo+ZSSY8FY+QvI4BrK8kU=
+
+Name: javax/media/opengl/GLContext.class
+SHA1-Digest: F2IU/OB+wbpKJR/DOpQIE4+OWnQ=
+
+Name: com/sun/opengl/impl/nurbs/O_nurbscurve.class
+SHA1-Digest: TszMKwzJMR/6jOvgd2IHp0W5vKo=
+
+Name: com/sun/opengl/util/texture/TextureIO.class
+SHA1-Digest: 6NhuWVFOGSN5NrE2j2+4jqGSocM=
+
+Name: com/sun/opengl/impl/FunctionAvailabilityCache$Version.class
+SHA1-Digest: 94i/9EABSrCJjS0/VOGwSZFtHKA=
+
+Name: javax/media/opengl/GLDrawable.class
+SHA1-Digest: ciYUPLJFGgdAxM5h8qoi1LfC5Ow=
+
+Name: com/sun/opengl/impl/tessellator/Render.class
+SHA1-Digest: huXFAS8GatNmuxih2c2rrmjgftY=
+
+Name: com/sun/opengl/impl/mipmap/Type_Widget.class
+SHA1-Digest: VY0O2zF3aHGyF/bNL7vMoEcQrJs=
+
+Name: com/sun/opengl/impl/nurbs/Knotspec.class
+SHA1-Digest: U6PTth85HzlBy4yEJNDOZQl4Uag=
+
+Name: com/sun/opengl/util/StrokeFontRec.class
+SHA1-Digest: ZqU8+Vsug1rXhUh44faOZmsLB8s=
+
+Name: com/sun/opengl/impl/nurbs/PwlArc.class
+SHA1-Digest: dAXJ5pUYg9VSFzc9jKAfhRwQ/Ng=
+
+Name: com/sun/opengl/impl/Java2D$1.class
+SHA1-Digest: DOvpfPYXJfROGgxGVjb00DwR0v0=
+
+Name: com/sun/opengl/impl/GLObjectTracker$16.class
+SHA1-Digest: HfyQHSi+6XFOHOOLQQHouQ/uyQQ=
+
+Name: com/sun/opengl/impl/x11/XVisualInfo64.class
+SHA1-Digest: y3mFqCc5VgfzAjRVMgyKdQxG7J0=
+
+Name: com/sun/opengl/impl/mipmap/Extract4444.class
+SHA1-Digest: 1d2muYE9kVQy/LmAhUe4sGWGUc4=
+
+Name: com/sun/opengl/impl/x11/GLXHyperpipeNetworkSGIX64.class
+SHA1-Digest: GYExDE7lC8S8eRsIGBq+JukUM84=
+
+Name: com/sun/opengl/impl/windows/WGLExt.class
+SHA1-Digest: 6JVZ5QPIfCkLu7O1PnUfqvJnyD0=
+
+Name: javax/media/opengl/ComponentEvents.class
+SHA1-Digest: hOyQtd2WghzhIhvfTUGMjxvCt2U=
+
+Name: com/sun/opengl/impl/windows/WGLExtProcAddressTable.class
+SHA1-Digest: Mtq9XEpBwC6B4CtQmnNIe1fAOfI=
+
+Name: com/sun/opengl/cg/CGcontext64.class
+SHA1-Digest: uHQBRN45n7ZbACknslRqRisqxfc=
+
+Name: javax/media/opengl/DefaultGLCapabilitiesChooser.class
+SHA1-Digest: ZmM1njvvL8+SrnVSjN4G2KkGf4Y=
+
+Name: com/sun/opengl/impl/nurbs/Patchlist.class
+SHA1-Digest: LzDIDMn8KL1KZdbf/w1/g/uJ7TE=
+
+Name: com/sun/opengl/impl/mipmap/Extract1555rev.class
+SHA1-Digest: fNETErXhBmxJ++JBYqfs+3oG+mk=
+
+Name: com/sun/opengl/impl/windows/BITMAPINFOHEADER32.class
+SHA1-Digest: 2vEfijj51qEAutGQZY0yykE28tg=
+
+Name: com/sun/opengl/util/texture/TextureData$Flusher.class
+SHA1-Digest: EGHQtRkA1FwdYQ+p5acW7M+4z2c=
+
+Name: com/sun/opengl/impl/mipmap/BuildMipmap.class
+SHA1-Digest: Ocjhcp3uGf37mVsK0VdEVS62Ba4=
+
+Name: com/sun/opengl/impl/nurbs/Quiltspec.class
+SHA1-Digest: iKBqLqIs6HcQIRVbmnVXK32hz2g=
+
+Name: javax/media/opengl/GLAutoDrawable.class
+SHA1-Digest: iQhD9jHJT93LX8V/pu4dlAy4oPI=
+
+Name: com/sun/opengl/cg/CGprogram.class
+SHA1-Digest: aHOc8nf9iRRJF2o0gH3yYClvogc=
+
+Name: com/sun/opengl/cg/CgGL.class
+SHA1-Digest: LF9BTEpWXv0WkJxW8D+KPRNO+Mc=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurfaceInfo.class
+SHA1-Digest: CafCj02M4sZoYtrQ/Wi89ea4Hic=
+
+Name: com/sun/opengl/impl/x11/GLXHyperpipeConfigSGIX64.class
+SHA1-Digest: UmKZFjN6b+fL2Vb80NOj5FGhG8E=
+
+Name: com/sun/opengl/impl/GLImpl$ARBVBOKey.class
+SHA1-Digest: l35FVjRBoBQAAAMFMyVZhtMJqr0=
+
+Name: com/sun/opengl/impl/nurbs/DisplayList.class
+SHA1-Digest: hJp57DdMGr261zty2AxUtTy0ei8=
+
+Name: com/sun/opengl/impl/GLUquadricImpl.class
+SHA1-Digest: MUdVo6cmq+oTCN9T7gBr9UCYPl8=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$4.class
+SHA1-Digest: GcV8rn+F3YFefgrWlR8QCJ5jJp8=
+
+Name: com/sun/opengl/impl/packrect/BackingStoreManager.class
+SHA1-Digest: GXU6NiXXvqeAlgqQyUqOxttNkPU=
+
+Name: com/sun/opengl/impl/GLObjectTracker$Deleter.class
+SHA1-Digest: PfGtkTYpcrXMtJvSsxD/3rIvSJU=
+
+Name: com/sun/opengl/impl/tessellator/ActiveRegion.class
+SHA1-Digest: LqG8zNbhZuqFDi82IVBGGyAYvFA=
+
+Name: com/sun/opengl/impl/x11/X11GLDrawableFactory$2.class
+SHA1-Digest: jUR2azDQAZcUH6lOTTxm3aPgnvA=
+
+Name: com/sun/opengl/impl/windows/WindowsOffscreenGLDrawable.class
+SHA1-Digest: CNz7H2idTmZ15zceC5ClV0zBY7Y=
+
+Name: com/sun/opengl/impl/macosx/MacOSXGLContext.class
+SHA1-Digest: 348YU/eJcQKDQCEeUCjXRkvcMUU=
+
+Name: com/sun/opengl/impl/nurbs/O_nurbssurface.class
+SHA1-Digest: U1Aon+6y/9MKykgM9xLeUkHKNpk=
+
+Name: com/sun/opengl/impl/nurbs/Knotvector.class
+SHA1-Digest: w2YhzN0KzgotJg3ENlP5xYYR3G8=
+
+Name: com/sun/opengl/impl/registry/Registry.class
+SHA1-Digest: WE6SCTA1hzeYxH/ZwCRD1F9IcO0=
+
+Name: com/sun/opengl/impl/nurbs/Backend.class
+SHA1-Digest: +aAc2K5zXA+SK9WznuaGs4yye7U=
+
+Name: com/sun/opengl/impl/GLObjectTracker$11.class
+SHA1-Digest: KAAHtf/zdT1UEoujDsYNrvYyl/8=
+
+Name: com/sun/opengl/impl/JAWT_Rectangle.class
+SHA1-Digest: 7GTOmfe4/7j8lf7L+fSAU8Ekc7o=
+
+Name: com/sun/opengl/util/GLUTBitmap9x15.class
+SHA1-Digest: 64cxP+Iw42eENnnA5yfs7PQmXoI=
+
+Name: javax/media/opengl/GLJPanel$DisplayAction.class
+SHA1-Digest: kZtOdkw4AGhTCJ1TQF46OasanXg=
+
+Name: com/sun/opengl/impl/x11/GLXExt.class
+SHA1-Digest: bPt7zgwUeRHp57Yd5KGyaYPUqvU=
+
+Name: com/sun/opengl/impl/nurbs/CArrayOfFloats.class
+SHA1-Digest: FUVZ7dRkMsiHneql3CCNcNxmx/s=
+
+Name: com/sun/opengl/impl/mipmap/Image.class
+SHA1-Digest: 2aty8IjaE2D1kJnHOuahCO2Qrgc=
+
+Name: com/sun/opengl/util/texture/spi/SGIImage.class
+SHA1-Digest: AE64YLpgMoS5Juzugc+RUn2lNvk=
+
+Name: com/sun/opengl/impl/GLPbufferImpl$SwapBuffersOnEventDispatchThre
+ adAction.class
+SHA1-Digest: Bmv9atuHLJ7Bcr1Xap52Swd7z2A=
+
+Name: com/sun/opengl/impl/tessellator/Normal.class
+SHA1-Digest: dLPuyU+fvEh9rksKwfR5LhLJBjY=
+
+Name: com/sun/opengl/impl/macosx/MacOSXPbufferGLDrawable$NSOpenGLImpl.
+ class
+SHA1-Digest: yGy7KqUe3HCHXJmO5Rjez5ez1zg=
+
+Name: com/sun/opengl/cg/CGtechnique.class
+SHA1-Digest: RajzB5yitVNX65Exiuz1CnlX21g=
+
+Name: com/sun/opengl/util/texture/Texture.class
+SHA1-Digest: IqH4IulRIA9vai62Sp0prjMUzu8=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$GlyphProducer.class
+SHA1-Digest: o30edYcGgWPG2CDmzNm0k1QZjTk=
+
+Name: com/sun/opengl/impl/Java2D$3.class
+SHA1-Digest: YpIgZPMRVw84pY3Co67EKHRlcZ4=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher$NativeLibInfo.class
+SHA1-Digest: aM1Y68UnbSSe+FO5257wF/pzdw4=
+
+Name: com/sun/opengl/util/Animator$MainLoop.class
+SHA1-Digest: /kKOnZwd6twfV5PL3UZAo+QJhag=
+
+Name: com/sun/opengl/impl/mipmap/ExtractUInt.class
+SHA1-Digest: 6/i9MQwST0BXQr1tSTIVeeyCwW4=
+
+Name: com/sun/opengl/impl/x11/DRIHack$1.class
+SHA1-Digest: sBGkcp7Kw0ri4ySzeMfdEIwFxJY=
+
+Name: com/sun/opengl/util/j2d/TextRenderer$DefaultRenderDelegate.class
+SHA1-Digest: lLaZ/xBhMTfqbA7nkWH3oOh3Osc=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurfaceInfo32.class
+SHA1-Digest: WzJFFHojKR9KeSJi+f4wvLC8Tmo=
+
+Name: com/sun/opengl/impl/nurbs/Bin.class
+SHA1-Digest: UDeJYO2Hv98md/yzf5GccFEs284=
+
+Name: com/sun/opengl/impl/packrect/RectVisitor.class
+SHA1-Digest: lF7UhkWVdh07jsWhzUf18xENX+Q=
+
+Name: com/sun/opengl/util/JOGLAppletLauncher.class
+SHA1-Digest: ySuJjxkZZ1XAwQm6FTDW8CASk+w=
+
+Name: javax/media/opengl/GLJPanel$2.class
+SHA1-Digest: isvXnOyZkrXwyhhcvHy9sGXsvSw=
+
+Name: com/sun/opengl/util/Animator$1.class
+SHA1-Digest: PbKjI9cwBpmZpUhWUMNOB0CG3k8=
+
+Name: com/sun/opengl/impl/JAWT_DrawingSurface32.class
+SHA1-Digest: QGv4/uDvnTtLtHc/hx9qNpUv30o=
+
+Name: com/sun/opengl/impl/GLObjectTracker$1.class
+SHA1-Digest: AjD4kN+YVCVLwDU0P+qj53LNzEs=
+
+Name: com/sun/opengl/impl/tessellator/Render$RenderStrip.class
+SHA1-Digest: X/HaAayAAK1R3vYcJsQ6tfjx8zE=
+
+Name: com/sun/opengl/impl/GLObjectTracker$5.class
+SHA1-Digest: 4HHfuj/ksc/VBm+hy79OVBDKaHs=
+
+Name: com/sun/opengl/impl/JAWT_Rectangle32.class
+SHA1-Digest: yvPwioUZZ86fkPRQcb0ip3icSwk=
+
+Name: javax/media/opengl/GLEventListener.class
+SHA1-Digest: hmDwk0o88pvtJd+lQFpkqARhG7I=
+

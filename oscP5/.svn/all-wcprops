@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/trunk/src/oscP5
+END
+OscProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/src/oscP5/OscProperties.java
+END
+OscNetManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/src/oscP5/OscNetManager.java
+END
+OscArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/src/oscP5/OscArgument.java
+END
+OscStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/src/oscP5/OscStatus.java
+END
+OscP5.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/src/oscP5/OscP5.java
+END
+OscMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/src/oscP5/OscMessage.java
+END
+OscPatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/src/oscP5/OscPatcher.java
+END
+OscIn.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/src/oscP5/OscIn.java
+END
+OscPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/src/oscP5/OscPacket.java
+END
+OscEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/src/oscP5/OscEventListener.java
+END
+OscPlug.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/src/oscP5/OscPlug.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/src/oscP5/package.html
+END
+OscBundle.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/src/oscP5/OscBundle.java
+END

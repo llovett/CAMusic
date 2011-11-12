@@ -17,20 +17,27 @@
  **/
 
 import processing.core.*;
+import java.awt.Color;
 
 public class Cell extends DrawableObject implements Comparable {
 
-    // Static variables that determine how to render a cell
-    private static int width, height;
+    // RENDERING OPTIONS
     private static final int COLOR_UPDATE_AMOUNT = 5;
-	
+    private static final int FADEOUT_UPDATE_AMOUNT = 2;
+    private boolean fadeOut; // Creates a "fade out" effect when turned on
+    
+    // Static variables that determine how to render a cell
+    private int width, height;
     private static PApplet parent;
 
     // Current cell state
     private int state;
     // Cell state at the next generation
     private int newstate;
-
+    // This is used for fading out, if "fadeOut" is turned on:
+    private int offFor;
+    private Color lastColor;
+    
     // Cell's own reference as to its position in the automaton
     private int x, y;
     
@@ -39,7 +46,9 @@ public class Cell extends DrawableObject implements Comparable {
 	
 	this.parent = parent;
 
-
+	fadeOut = false;
+	offFor = 0;
+	lastColor = new Color(255, 0, 255, 0);
 
 	state = 0;
 	newstate = 0;
@@ -50,25 +59,10 @@ public class Cell extends DrawableObject implements Comparable {
 	setStrokeWidth(0);
     }
 
-    /**
-     * render()
-     *
-     * Draw this Cell.
-     **/
-    public void render() {
-	if (isAlive()) {
-		// EXPENSIVE: use HSB with an alpha channel
-	    parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
-	    setupDrawPrefs();
-
-
-	    parent.ellipse(0, 0, getWidth()*2, getHeight()*2);
-	    
-	    // Switch it back off so we don't get confused.
-//	    parent.colorMode(PApplet.RGB, 255, 255, 255, 255);
-	}
+    public void setFadeout(boolean fadeOut) {
+	this.fadeOut = fadeOut;
     }
-
+    
     /**
      * isAlive()
      * @return whether or not this Cell is currently (in THIS state) alive.
@@ -77,42 +71,16 @@ public class Cell extends DrawableObject implements Comparable {
 	return state != 0;
     }
 
-//     /**
-//      * setAlive - Set the next state of this cell
-//      * @param alive - The future state of the cell
-//      */
-//     public void setAlive(boolean alive) {
-// 	new_alive = alive;
-//     }
-	
-//     /**
-//      * setCurrentState() - Set the current state (dead/alive) of this Cell.
-//      * This should not be confused with setAlive(), which sets the NEXT state
-//      * of the cell.
-//      * 
-//      * @param alive - The revised CURRENT state of the Cell
-//      */
-//     public void setCurrentState(boolean alive) {
-// 	boolean old_alive = this.alive;
-		
-// 	this.alive = alive;
-// 	// Unless specified otherwise in setAlive(), assume that this cell will continue on to age.
-// 	new_alive = alive;
-		
-// 	// If we were switched on manually, count this cell as having an age of 1 for this generation.
-// 	if (! old_alive && alive)
-// 	    state = 1;
-//     }
-
     public void setCurrentState(int state) {
 	setState(state);
 	confirmState();
 
-	// Assume that we will age at the next generation
-	newstate = state+1;
+	// Assume that we will age at the next generation if our current
+	// state is an "on" state.
+	if (state > 0)
+	    newstate = state+1;
     }
 	
-
     public void setState(int state) {
 	newstate = state;
     }
@@ -125,16 +93,51 @@ public class Cell extends DrawableObject implements Comparable {
 	state = newstate;
 
 	//	parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
-	if (isAlive())
-	    setColor(constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 180),
-		     255,
-		     255,
-		     255);
-	else
-		// Set to transparent
+	if (isAlive()) {
+	    offFor = 0;
+	    lastColor = new Color(constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 180),
+				  255,
+				  255,
+				  255);
+	    setColor(lastColor);
+	    // } else {
+	    // 	// Set to transparent
+	    //     offFor++;
+	    //     if (fadeOut) {
+	    // 	// lastColor = new Color(lastColor.getRed(),
+	    // 	// 		      lastColor.getGreen(),
+	    // 	// 		      lastColor.getBlue(),
+	    // 	// 		      255);//				      constrain(lastColor.getAlpha() - FADEOUT_UPDATE_AMOUNT, 0, 255));
+
+	    // 	lastColor = new Color(lastColor.getRed(),
+	    // 			      constrain(lastColor.getGreen() - FADEOUT_UPDATE_AMOUNT, 0, 255),
+	    // 			      255,
+	    // 			      255);
+
+	    // 	setColor(lastColor);
+    
+	} else {
 	    setColor(255, 255, 255, 0);
+	}
+	
     }
 
+    /**
+     * render()
+     *
+     * Draw this Cell.
+     **/
+    public void render() {
+	if (isAlive()) {
+	    // EXPENSIVE: use HSB with an alpha channel
+	    parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
+	    setupDrawPrefs();
+
+
+	    parent.ellipse(0, 0, getWidth()*2, getHeight()*2);
+	}
+    }
+    
     @Override
 	public int compareTo(Object arg0) {
 	Cell comp = (Cell)arg0;
