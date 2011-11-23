@@ -32,6 +32,9 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     //////////////////////////
     // SETTINGS FOR CAMUSIC //
     //////////////////////////
+
+    // Show the score on-screen?
+    boolean showScore = true;
     
     // private static final int ROWS = 200;
     // private static final int COLS = 200;
@@ -48,13 +51,18 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     private static final int COLS_CONTOUR = 256;
     private static final int CELL_WIDTH = 5;
     private static final int CELL_HEIGHT = 5;
+    private static final int CONT_CELL_WIDTH = 5;
+    private static final int CONT_CELL_HEIGHT = 5;
     private static final int PROC_CELL_WIDTH = 10;
     private static final int PROC_CELL_HEIGHT = 10;
 
     private static long UPDATE_INTERVAL_BASS = 50; // Bass automaton delay
     private static long UPDATE_INTERVAL_PROC = 500; // Bass automaton delay
     private static long UPDATE_INTERVAL_CONTOUR = 2000;	// Contour Automaton delay
-
+    // private static long UPDATE_INTERVAL_BASS = 5; // Bass automaton delay
+    // private static long UPDATE_INTERVAL_PROC = 50; // Bass automaton delay
+    // private static long UPDATE_INTERVAL_CONTOUR = 200;	// Contour Automaton delay
+    
     // Automata rule strings, encoded as S/B lists
     // private static final int[] AB_SLIST = { 5 }; // Extreme periodicity!
     // private static final int[] AB_BLIST = { 3, 4, 5 };
@@ -67,7 +75,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     private static final int[] CONT_SLIST = { 1, 2, 3, 4, 5}; //{ 0, 1, 2, 3, 4, 5, 6, 7, 8 };
     private static final int[] CONT_BLIST = { 3 };
     // Maximum state of any cell, also determines number of colors available to use for states.
-    private static final int MAX_STATE = 100;
+    private static final int MAX_STATE = 255;
 
     
     ///////////////////
@@ -136,6 +144,12 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 
     // What was the population in the previous generation?
     private int prevPop;
+
+    // Objects used for display
+    PImage piano, mpiano, mforte, forte;
+    PImage clef;
+    private static final int SCORE_X_OFFSET = 400;
+    private static final int SCORE_Y_OFFSET = 400;
     
     public void setup() {
 	// Set up listeners
@@ -190,7 +204,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 				       0,
 				       0);
 
-	AutomataContour.setCellSize(CELL_WIDTH, CELL_HEIGHT);
+	AutomataContour.setCellSize(CONT_CELL_WIDTH, CONT_CELL_HEIGHT);
 
 	// Set up some colors for the automata
 	AutomataBass.setColor(0, 0, 0);
@@ -206,6 +220,13 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	CAMusicAutomata.add(AutomataBass);
 	CAMusicAutomata.add(AutomataBassProc);
 	CAMusicAutomata.add(AutomataContour);
+
+	// Setup images
+	piano = loadImage("img/piano.png");
+	mpiano = loadImage("img/mezzopiano.png");
+	mforte = loadImage("img/mezzoforte.png");
+	forte = loadImage("img/forte.png");
+	clef = loadImage("img/bassclef.png");
 
 	// Use a Timer to update at arbitrary regular intervals.
 	ArrayList<Automata> lifeAuts = new ArrayList<Automata>();
@@ -353,47 +374,50 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    int autID = msg.get(0).intValue();
 	    int penPressure = msg.get(1).intValue();
 	    int penType = msg.get(2).intValue();
+	    int penWidth = 1;
 	    Point loc = new Point(msg.get(3).intValue(),
 				  msg.get(4).intValue());
 
+	    // Check to see if a pen width was given
+	    if (msg.arguments().length > 5)
+		penWidth = msg.get(5).intValue();
+	    
 	    // Transmit this information to the proper pen
+	    if (autID > SoundPens.size()) {
+		System.err.println("AutomataID out of range : "+autID);
+		return;
+	    }
 	    CASoundPen thePen = SoundPens.get(autID);
 	    thePen.setType(penType);
 	    thePen.setPenPressure(penPressure);
+	    thePen.setPenWidth(penWidth);
 	    thePen.setPenPosition(loc);
 
 	    // Use the pen!
 	    thePen.applyPen();
-
-	    //BassPen.setPenPressure(msg.get(0).intValue());
 	}
 
-	else if (msg.addrPattern().equals("/penPos")) {	
-    	    // FORMAT =====
-	    // [penpos : amplitude(f) : specdens(f) ]
-	    if (msg.arguments().length < 2) {
-		System.err.println("Invalid OscMessage received of addrPattern \"/penPos\": ");
-		System.err.println("===> "+msg.toString());
-		return;
-	    }
+	// else if (msg.addrPattern().equals("/penPos")) {	
+    	//     // FORMAT =====
+	//     // [penpos : amplitude(f) : specdens(f) ]
+	//     if (msg.arguments().length < 2) {
+	// 	System.err.println("Invalid OscMessage received of addrPattern \"/penPos\": ");
+	// 	System.err.println("===> "+msg.toString());
+	// 	return;
+	//     }
 
-	    // the pen for the contour automaton
-	    CASoundPen thePen = SoundPens.get(2);
-	    thePen.setType(CASoundPen.AGE_CELLS);
-
-
-	    //	    System.err.println("DEBUG : packet received = "+msg.get(1).floatValue());
+	//     // the pen for the contour automaton
+	//     CASoundPen thePen = SoundPens.get(2);
+	//     thePen.setType(CASoundPen.FLIP_CELLS);
+	//     int x = (int)(msg.get(0).floatValue() * AutomataContour.getColumns()) % AutomataContour.getColumns();
+	//     int y = (int)(msg.get(1).floatValue() * AutomataContour.getRows()) % AutomataContour.getRows();;
 	    
-	    int x = (int)(msg.get(0).floatValue() * AutomataContour.getColumns()) % AutomataContour.getColumns();
-	    int y = (int)(msg.get(1).floatValue() * AutomataContour.getRows()) % AutomataContour.getRows();;
-	    
-	    thePen.setPenPressure(1);
-	    thePen.setPenPosition(new Point(x, y));
-	    //	    System.err.println("DEBUG : Flipping on contour at "+x+", "+y);
-	    thePen.applyPen();
-	}
+	//     thePen.setPenPressure(1);
+	//     thePen.setPenWidth(3);
+	//     thePen.setPenPosition(new Point(x, y));
+	//     thePen.applyPen();
+	// }
 
-	//BassPen.processMessage(msg);
     }
 
     public void mouseClicked() {
@@ -487,15 +511,28 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
      ******************/
 
     public void draw() {
-	// colorMode(RGB, 255, 255, 255);
+	// the background color
 	background(255);
 
+	// render each automaton
 	for (Automata a : CAMusicAutomata)
 	    try {
 		a.render();
-
-		//		BassPen.applyPen();
 	    } catch (ConcurrentModificationException e) { }
+
+	// render bits of the score
+	// if (showScore) {
+	//     image(clef, SCORE_X_OFFSET, SCORE_Y_OFFSET);
+	// }
+    }
+
+    /*********************
+     * show information that guides the instrumentalist,
+     * superimposed on top of everything else
+     *********************/
+
+    public void showDirections() {
+	
     }
 
     /*******************
@@ -503,6 +540,8 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
      * sending relevant information over to Max
      *******************/
     private void calculateFrameAndSend() {
+	/** Send primary pitch and rhythm information **/
+	
 	// ---- First, get the current pitch from the top-right automaton ----
 	// The way we do this is to go through each row of the Automaton and
 	// find out which one(s) have the most alive cells in that row. As each
@@ -572,6 +611,31 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	osc.send(theMsg, toMax);
 
 	prevPop = AutomataBass.getCellCountForOnStates();
+
+
+	/** Send information about the population of the contour automaton **/
+
+	OscMessage contMsg = new OscMessage("/contourDens");
+	contMsg.add((float)AutomataContour.getCellCountForOnStates()/(AutomataContour.getRows() * AutomataContour.getColumns()));
+	osc.send(contMsg, toMax);
+
+	/** Send information about each row in the TL automaton to be used as a filter **/
+	OscMessage filtMsg = new OscMessage("/rowsinfo");
+
+	// We only have 20 filters inside of the max patch, so we divide the number of rows 
+	// we have by 20 in order to find out how many rows we need to analyze at once.
+	int rowChunkSize = AutomataBass.getRows() / 20;
+
+	for (int i = 0; i < AutomataBass.getRows(); i+=rowChunkSize) {
+	    float result = 0;
+	    for (int j = i; j < AutomataBass.getRows() && j - i < rowChunkSize; j++) {
+		int aliveCellCount = AutomataBass.getCellCountForOnStates(new Point(0, j), new Point(AutomataBass.getColumns()-1, j));
+		result += ( aliveCellCount / (float)AutomataBass.getColumns());
+	    }
+	    filtMsg.add(result);
+	}
+
+	osc.send(filtMsg, toMax);
     }
 
     /******************

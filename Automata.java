@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.NoSuchElementException;
 import java.util.ArrayList;
 import java.util.Collection;
+// import java.util.HashMap;
 import java.io.*;
 import java.util.Arrays;
 import java.awt.Dimension;
@@ -29,10 +30,9 @@ public class Automata extends DrawableObject {
     private int rows, columns;
     // Cell matrix
     private Cell[][] cells;
+    // private HashMap<Cell> aliveCells; // speeds up rendering time.
     // Automaton generation
     private int generation;
-    // Should we count diagonal neighbors or not?
-    private boolean diagonals;
     // Rules of this automaton
     private AutomataRules rules;
     // Title of this automaton, can be useful for sending OSC messages
@@ -84,7 +84,6 @@ public class Automata extends DrawableObject {
 	    for (int j=0; j<columns; j++)
 		cells[i][j] = new Cell(parent, j, i, cW, cH);
 
-	diagonals = true;
 	generation = 0;
 
     }
@@ -119,6 +118,10 @@ public class Automata extends DrawableObject {
 	
 	for (int i=0; i<cells.length; i++)
 	    for (int j=0; j<cells[i].length; j++) {
+		// Cell c = getCell(i, j);
+		// c.setCurrentState(states[i][j]);
+		// if (states[i][j] > 0)
+		//     aliveCells.
 		setCell(i, j, states[i][j]);
 	    }
     }
@@ -204,92 +207,27 @@ public class Automata extends DrawableObject {
     private ArrayList<Cell> getNeighbors(int row, int col) {		
 	// Use a set here to prevent the addition of duplicates
 	ArrayList<Cell> neighbors = new ArrayList<Cell>();
-
+	
 	// If we are 1x1, there are no neighbors
 	if (getRows() == 1 && getColumns() == 1)
 	    return neighbors;
 
-	int row_up, row_down, col_left, col_right;
-	row_up = row_down = row;
-	col_left = col_right = col;
-	if (getRows() > 1)
-	    if (row == getRows() - 1) {
-		row_up = getRows() - 2;
-		row_down = 0;
-	    }
-	    else if (row == 0) {
-		row_up = getRows() - 1;
-		row_down = 1;
-	    }
-	    else {
-		row_up = row-1;
-		row_down = row+1;
-	    }
-
-	if (getColumns() > 1)
-	    if (col == getColumns() - 1) {
-		col_left = getColumns() - 2;
-		col_right = 0;
-	    }
-	    else if (col == 0) {
-		col_left = getColumns() - 1;
-		col_right = 1;
-	    }
-	    else {
-		col_left = col - 1;
-		col_right = col + 1;
-	    }
-
-	// Annoying cases where one of our dimensions is 2
-	if (getColumns() == 2 && getRows() == 2) {
-	    neighbors.add(cells[row_up][col]);
-	    neighbors.add(cells[row][col_left]);
-
-	    if (diagonals)
-		neighbors.add(cells[row_up][col_left]);
-
-	    return neighbors;
-	}
-	else if (getColumns() == 2) {
-	    neighbors.add(cells[row_up][col]);
-	    neighbors.add(cells[row_down][col]);
-	    neighbors.add(cells[row][col_left]);
-
-	    if (diagonals) {
-		neighbors.add(cells[row_up][col_left]);
-		neighbors.add(cells[row_down][col_left]);
-	    }
-
-	    return neighbors;
-	}
-	else if (getRows() == 2) {
-	    neighbors.add(cells[row_up][col]);
-	    neighbors.add(cells[row][col_left]);
-	    neighbors.add(cells[row][col_right]);
-
-	    if (diagonals) {
-		neighbors.add(cells[row_up][col_left]);
-		neighbors.add(cells[row_up][col_right]);
-	    }
-
+	if (getRows() == 1) {
+	    neighbors.add(cells[row][(col+getColumns()-1)%getColumns()]);
+	    neighbors.add(cells[row][(col+getColumns()+1)%getColumns()]);
 	    return neighbors;
 	}
 
-	// Add north, south, east, and west neighbors
-	neighbors.add(cells[row_up][col]);
-	if (row_up != row_down)
-	    neighbors.add(cells[row_down][col]);
-	neighbors.add(cells[row][col_left]);
-	neighbors.add(cells[row][col_right]);
-
-	// Add diagonals if requested
-	if (diagonals) {
-	    // Northeast, Southeast, Southwest, Northwest
-	    neighbors.add(cells[row_up][col_right]);
-	    neighbors.add(cells[row_down][col_right]);
-	    neighbors.add(cells[row_down][col_left]);
-	    neighbors.add(cells[row_up][col_left]);
+	if (getColumns() == 1) {
+	    neighbors.add(cells[(row+getRows()-1)%getRows()][col]);
+	    neighbors.add(cells[(row+getRows()+1)%getRows()][col]);
+	    return neighbors;
 	}
+
+	for (int i = -1; i <=1; i++)
+	    for (int j = -1; j<=1; j++)
+		if (! (j == 0 && i == 0))
+		    neighbors.add(cells[(row+getRows()+i)%getRows()][(col+getColumns()+j)%getColumns()]);
 
 	return neighbors;
     }
@@ -468,10 +406,6 @@ public class Automata extends DrawableObject {
 	return ret;
     }
 
-    public void setDiagonalsUsage(boolean diagonals) {
-	this.diagonals = diagonals;
-    }
-
     /**
      * applyRules() - Uses the given set of AutomataRules to decide
      * the fate of the cells in the cells[][] matrix.
@@ -498,8 +432,11 @@ public class Automata extends DrawableObject {
 		    //target.setAlive(true);
 		    int state = target.getState();
 		    stateCounts[state]--;
-		    target.setState(state+1);
-		    stateCounts[state+1]++;
+
+		    state++;
+		    
+		    target.setState(state);
+		    stateCounts[state]++;
 		    break;
 		case AutomataRules.CELL_BIRTH:
 		    //		    target.setAlive(true);
@@ -515,6 +452,23 @@ public class Automata extends DrawableObject {
 		    break;
 		case AutomataRules.CELL_STASIS:
 		    // Do nothing to the cell
+
+		    ///////////////////////////////////////////////////////
+                    // WARNING WARNING					 //
+		    // 	HACK ALERT! HACK ALERT!				 //
+		    // 	THIS IS some JJJAAANNNKKK SSSHHHIIITTT		 //
+                    ///////////////////////////////////////////////////////
+
+		    // If we are alive and were told to "be still", then
+		    // it was because we have reached our max state. Now,
+		    // so that we can get a nice "spinning colors" effect,
+		    // we will reset to our first "on" state (i.e. 1)
+		    if (target.isAlive()) {
+			stateCounts[target.getState()]--;
+			target.setState(1);
+			stateCounts[1]++;
+		    }
+
 		    break;
 		default:
 		    break;
@@ -552,13 +506,22 @@ public class Automata extends DrawableObject {
 	    throw new NoSuchElementException("Rows: "+rows+"; Cols: "+columns+"; requested cell at <"+row+"><"+col+">");
 	if (row < 0 || col < 0)
 	    throw new NoSuchElementException("Rows: "+rows+"; Cols: "+columns+"; requested cell at <"+row+"><"+col+">");
-	// 	if (state > rules.getMaxCellState()) {
-	// 	    Exception e = new Exception("state "+state+" is out of range of maximum state "+rules.getMaxCellState());
-	// 	    throw e;
-	//	}
+	// if (state > rules.getMaxCellState()) {
+	//     //	    throw new Exception("state "+state+" is out of range of maximum state "+rules.getMaxCellState());
+	//     System.err.println("WARNING: STATE IS OUT OF RANGE : "+state+"; max is "+rules.getMaxCellState());
+	// }
 
+	
+	///////////////////////////////////////////////////////
+	// WARNING WARNING					 //
+	// 	HACK ALERT! HACK ALERT!				 //
+	// 	THIS IS some JJJAAANNNKKK SSSHHHIIITTT		 //
+	///////////////////////////////////////////////////////
+	
+	
 	Cell c = cells[row][col];
 	stateCounts[c.getState()]--;
+	if (state >= rules.getMaxCellState()) state = 1;
 	cells[row][col].setCurrentState(state);
 	stateCounts[state]++;
 

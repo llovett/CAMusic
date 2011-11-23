@@ -22,7 +22,7 @@ import java.awt.Color;
 public class Cell extends DrawableObject implements Comparable {
 
     // RENDERING OPTIONS
-    private static final int COLOR_UPDATE_AMOUNT = 5;
+    private static final int COLOR_UPDATE_AMOUNT = 1;
     private static final int FADEOUT_UPDATE_AMOUNT = 2;
     private boolean fadeOut; // Creates a "fade out" effect when turned on
     
@@ -79,6 +79,8 @@ public class Cell extends DrawableObject implements Comparable {
 	// state is an "on" state.
 	if (state > 0)
 	    newstate = state+1;
+	else
+	    newstate = 0;
     }
 	
     public void setState(int state) {
@@ -95,10 +97,10 @@ public class Cell extends DrawableObject implements Comparable {
 	//	parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
 	if (isAlive()) {
 	    offFor = 0;
-	    lastColor = new Color(constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 180),
-				  255,
-				  255,
-				  255);
+	    lastColor = new Color(constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 255),
+	    			  255,
+	    			  255,
+	    			  255);
 	    setColor(lastColor);
 	    // } else {
 	    // 	// Set to transparent

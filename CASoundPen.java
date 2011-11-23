@@ -23,11 +23,13 @@ public class CASoundPen {
     public static final int FLIP_CELLS = 1;
     public static final int AGE_CELLS = 2;
     public static final int ERASE_CELLS = 3;
+    public static final int AGE_POPULATION = 4;
 
     // Private fields, controlling various aspects of how the pen draws
     private int penPressure; // -1 = erase, 0 = neutral, > 0 = set the cell state
     private int penX, penY;
     private int type; // impose-matrix, draw-line, etc.
+    private int width;
 
     // Private constants, thresholds, etc.
     private static final int MAX_MAT_SIZE = 100;
@@ -136,6 +138,10 @@ public class CASoundPen {
 	penPressure = pressure;
     }
 
+    public void setPenWidth(int width) {
+	this.width = width;
+    }
+
     public void setType(int type) {
 	this.type = type;
     }
@@ -146,16 +152,10 @@ public class CASoundPen {
      * Applies current pen attributes in order to affect its automaton.
      **/
     public void applyPen() {
-	// Wrap around automaton boundaries
-	// int cellX = (int)(((penX % aut.getWidth()) /
-	// 		   (double)aut.getWidth()) * cellSize.getWidth());
-	// int cellY = (int)(((penY % aut.getHeight()) /
-	// 		   (double)aut.getHeight()) * cellSize.getHeight());
-
 	switch (type) {
 	case IMPOSE_MATRIX:
 	    Point p = aut.getNhoodDensities(nhood_size, 2)[0];
-	    System.out.println("DEBUG : "+p.toString());
+	    //	    System.out.println("DEBUG : "+p.toString());
 	    int cellX = (int)p.getX();
 	    int cellY = (int)p.getY();
 		
@@ -164,13 +164,38 @@ public class CASoundPen {
 	    imposeMatrix(cellY, cellX, penMatrices.get(rand.nextInt(penMatrices.size())));
 	    break;
 	case FLIP_CELLS:
-	    // Flip just one cell
-	    int cellState = aut.getCell(penY, penX).getState();
-	    aut.setCell(penY, penX, (cellState > 0? 0 : penPressure));
+	    double onOrOff = 0.0;
+	    for (int i = penX; i < penX + width; i++)
+		for (int j = penY; j < penY + width; j++) {
+		    int posX = i % aut.getColumns();
+		    int posY = j % aut.getRows();
+		    if (aut.getCell(posY, posX).isAlive()) onOrOff++;
+		}
+	    onOrOff /= Math.pow(width, 2);
+	    for (int i = penX; i < penX + width; i++)
+		for (int j = penY; j < penY + width; j++) {
+		    int posX = i % aut.getColumns();
+		    int posY = j % aut.getRows();
+		    aut.setCell(posY, posX, (onOrOff >= 0.25? 0 : penPressure));
+		}
+	    
 	    break;
 	case AGE_CELLS:
 	    // Age just one cell
-	    aut.setCell(penY, penX, penPressure);
+	    for (int i = penX; i < penX + width; i++)
+		for (int j = penY; j < penY + width; j++) {
+		    int posX = i % aut.getColumns();
+		    int posY = j % aut.getRows();
+		    aut.setCell(posY, posX, penPressure);
+		}
+	    break;
+	case AGE_POPULATION:
+	    // Age all "on" cells
+	    for (int i = 0; i<aut.getRows(); i++)
+		for (int j = 0; j<aut.getColumns(); j++) {
+		    int state = aut.getCell(i,j).getState();
+		    aut.setCell(i,j,(state > 0? state + 1 : 0));
+		}
 	    break;
 	case ERASE_CELLS:
 	    // Erase all cells

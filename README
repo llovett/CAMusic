@@ -111,3 +111,12 @@ Problems:
 	3. Choices of treatments ~~ perspective on automation, the
 	human-determined machine quality
 	4. 
+
+
+TODO LIST
+
++ FLIP_CELLS looks like it might not be turning off cells? At least not as often
+as I think it should.
++ Separate functional code from code that does rendering/graphics
++ Remove debugging statements, minimize the amount of printing that goes on in
+general
