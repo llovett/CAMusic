@@ -5,6 +5,8 @@ import processing.core.*;
 // OPENGL renderer as opposed to JAVA2D or P2D (Oh god... never use that one...)
 // makes this run SO much faster.
 import processing.opengl.*;
+// For recording video
+import processing.video.*;
 
 // Stuff for IPC with MaxMSP via OSC
 import oscP5.*;
@@ -33,8 +35,15 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     // SETTINGS FOR CAMUSIC //
     //////////////////////////
 
+    // Use only for recording video
+    MovieMaker mm;
+
     // Show the score on-screen?
     boolean showScore = true;
+    // Use settings for exporting video?
+    boolean exportVideo = false;
+
+    boolean fadeout = true;
     
     // private static final int ROWS = 200;
     // private static final int COLS = 200;
@@ -43,8 +52,10 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     // Try out the following settings for old 1280 x 800 screen res macbook:
     private static final int WIDTH = 1280;
     private static final int HEIGHT = 800;
-    private static final int BASS_ROWS = 100;
-    private static final int BASS_COLS = 128;
+    // private static final int BASS_ROWS = 100;
+    // private static final int BASS_COLS = 128;
+    private static final int BASS_ROWS = 200;
+    private static final int BASS_COLS = 256;
     private static final int PROC_ROWS = 50;
     private static final int PROC_COLS = 64;
     private static final int ROWS_CONTOUR = 160;
@@ -58,7 +69,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 
     private static long UPDATE_INTERVAL_BASS = 50; // Bass automaton delay
     private static long UPDATE_INTERVAL_PROC = 500; // Bass automaton delay
-    private static long UPDATE_INTERVAL_CONTOUR = 2000;	// Contour Automaton delay
+    private static long UPDATE_INTERVAL_CONTOUR = 1000;	// Contour Automaton delay
     // private static long UPDATE_INTERVAL_BASS = 5; // Bass automaton delay
     // private static long UPDATE_INTERVAL_PROC = 50; // Bass automaton delay
     // private static long UPDATE_INTERVAL_CONTOUR = 200;	// Contour Automaton delay
@@ -152,19 +163,22 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     private static final int SCORE_Y_OFFSET = 400;
     
     public void setup() {
+	if (exportVideo)
+	    // Instantiate the MovieMaker
+	    mm = new MovieMaker(this, WIDTH, HEIGHT, "camusic.mov", 30, MovieMaker.H263, MovieMaker.HIGH);
+	   
 	// Set up listeners
 	addMouseWheelListener(this);
 
-	// Test settings:
-	// size(COLS * CELL_WIDTH * 2, ROWS * CELL_HEIGHT * 2, OPENGL);
-	// Sweet macbook settings below:
-	size(WIDTH, HEIGHT, OPENGL);
+	// Set up the Processing applet
+	if (! exportVideo)
+	    size(WIDTH, HEIGHT, OPENGL);
+	else
+	    size(WIDTH, HEIGHT, JAVA2D);
+	
 	// Set up OSC stuff
 	osc = new OscP5(this, OSC_PORT_RCV);
 	toMax = new NetAddress("127.0.0.1", OSC_PORT_SEND1);
-	//toMax = new NetAddress("132.162.91.132", OSC_PORT_SEND1);
-	// AutBassProcAddr = new NetAddress("127.0.0.1", OSC_PORT_SEND2);
-	// ContourAddr = new NetAddress("127.0.0.1", OSC_PORT_SEND_CONT);
 
 	BassRules = new SingleStateRules(AB_SLIST, AB_BLIST, MAX_STATE);
 	BassProcRules = new SingleStateRules(AB_PROC_SLIST, AB_PROC_BLIST, MAX_STATE);
@@ -333,7 +347,6 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    a.clearCells();
     }
 
-
     /************************
      * accessors & mutators
      ************************/
@@ -396,7 +409,9 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    // Use the pen!
 	    thePen.applyPen();
 	}
-
+	else if (msg.addrPattern().equals("/stopani")) {
+	    fadeout = !fadeout;
+	}
 	// else if (msg.addrPattern().equals("/penPos")) {	
     	//     // FORMAT =====
 	//     // [penpos : amplitude(f) : specdens(f) ]
@@ -454,6 +469,14 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    //	    ProcPen.applyPen();
 	    BassPen.applyPen();
 	    break;
+	case KeyEvent.VK_ENTER:
+	    if (exportVideo) {
+		System.err.println("Finishing video...");
+		mm.finish();
+		exit();
+	    }
+	    break;
+
 	default:
 	    break;
 	}
@@ -511,20 +534,37 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
      ******************/
 
     public void draw() {
-	// the background color
-	background(255);
+	if (fadeout) {
+	    colorMode(RGB);
+	    fill(255, 255, 255, 15);
+	    rect(0, 0, WIDTH, HEIGHT);
+	}
+	else {
+	    // the background color
+	    background(255);
 
-	// render each automaton
-	for (Automata a : CAMusicAutomata)
-	    try {
-		a.render();
-	    } catch (ConcurrentModificationException e) { }
+	    // render each automaton
+	    for (Automata a : CAMusicAutomata)
+		try {
+		    a.render();
+		} catch (ConcurrentModificationException e) { }
 
-	// render bits of the score
-	// if (showScore) {
-	//     image(clef, SCORE_X_OFFSET, SCORE_Y_OFFSET);
-	// }
+	    // render bits of the score
+	    // if (showScore) {
+	    //     image(clef, SCORE_X_OFFSET, SCORE_Y_OFFSET);
+	    // }
+	}
+	if (exportVideo)
+	    // Record a frame to video
+	    mm.addFrame();
+
     }
+
+    // public void finish() {
+    // 	System.err.println("Finishing video...");
+    // 	mm.finish();
+    // 	exit();
+    // }
 
     /*********************
      * show information that guides the instrumentalist,
@@ -621,7 +661,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 
 	/** Send information about each row in the TL automaton to be used as a filter **/
 	OscMessage filtMsg = new OscMessage("/rowsinfo");
-
+	
 	// We only have 20 filters inside of the max patch, so we divide the number of rows 
 	// we have by 20 in order to find out how many rows we need to analyze at once.
 	int rowChunkSize = AutomataBass.getRows() / 20;

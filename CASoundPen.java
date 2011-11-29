@@ -152,6 +152,9 @@ public class CASoundPen {
      * Applies current pen attributes in order to affect its automaton.
      **/
     public void applyPen() {
+	// Random object to use if necessary
+	Random rand = new Random();
+	
 	switch (type) {
 	case IMPOSE_MATRIX:
 	    Point p = aut.getNhoodDensities(nhood_size, 2)[0];
@@ -160,7 +163,6 @@ public class CASoundPen {
 	    int cellY = (int)p.getY();
 		
 	    //aut.setCell(cellY, cellX, 1);
-	    Random rand = new Random();
 	    imposeMatrix(cellY, cellX, penMatrices.get(rand.nextInt(penMatrices.size())));
 	    break;
 	case FLIP_CELLS:
@@ -200,6 +202,10 @@ public class CASoundPen {
 	case ERASE_CELLS:
 	    // Erase all cells
 	    aut.clearCells();
+
+	    // Set color offsets
+	    aut.setColorOffset(rand.nextInt(256));
+	
 	    break;
 	default:
 	    System.err.println("Warning: unrecognized pen type: "+type);

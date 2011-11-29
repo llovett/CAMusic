@@ -7,47 +7,48 @@ import java.awt.BorderLayout;
 
 public class CAMusicWrapper extends Frame {
 
-	CAMusic cam;
+    CAMusic cam;
 
-	public CAMusicWrapper() {
-		constructComponents();
-	}
+    public CAMusicWrapper() {
+	constructComponents();
+    }
 
-	public void constructComponents() {
-		addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent we) {
-				System.exit(0);
-			}
-		});
+    public void constructComponents() {
+	addWindowListener(new WindowAdapter() {
+		public void windowClosing(WindowEvent we) {
+		    //		    cam.finish();
+		    System.exit(0);
+		}
+	    });
 
-		setLayout(new BorderLayout());
+	setLayout(new BorderLayout());
 
-		setTitle("CAMusic");
+	setTitle("CAMusic");
 
-		cam = new CAMusic();
-		cam.init();
+	cam = new CAMusic();
+	cam.init();
 		
-//		cam.setup();
+	//		cam.setup();
 
-		setResizable(false);
-		setMinimumSize(new Dimension(
-				cam.getWidth(),
-				cam.getHeight())
-		);
-		setPreferredSize(new Dimension(
-				cam.getWidth(),
-				cam.getHeight())
-		);
+	setResizable(false);
+	setMinimumSize(new Dimension(
+				     cam.getWidth(),
+				     cam.getHeight())
+		       );
+	setPreferredSize(new Dimension(
+				       cam.getWidth(),
+				       cam.getHeight())
+			 );
 		
-		add(cam, BorderLayout.CENTER);
-	}
+	add(cam, BorderLayout.CENTER);
+    }
 
-	public static void main(String[] args) {
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				CAMusicWrapper camw = new CAMusicWrapper();
-				camw.setVisible(true);
-			}
-		});
-	}
+    public static void main(String[] args) {
+	java.awt.EventQueue.invokeLater(new Runnable() {
+		public void run() {
+		    CAMusicWrapper camw = new CAMusicWrapper();
+		    camw.setVisible(true);
+		}
+	    });
+    }
 }		

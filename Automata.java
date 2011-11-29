@@ -264,6 +264,12 @@ public class Automata extends DrawableObject {
     // GETTERS FOR ANALYSIS BY MAX //
     /////////////////////////////////
 
+
+    public int getCellCountForOnStates() {
+	return getCellCountForOnStates(new Point(0,0),
+				       new Point(columns-1, rows-1));
+    }
+
     /**
      * getCellCountForOnStates(state)
      * Count the number of cells that are in an "on" state within an arbitrary
@@ -278,6 +284,9 @@ public class Automata extends DrawableObject {
 
 	for (int i = 1; i<=rules.getMaxCellState(); i++)
 	    count += getCellCountForState(i, start, end);
+	// for (Cell[] row : cells)
+	//     for (Cell c : row)
+	// 	if (c.isAlive()) count++;
 
 	return count;
     }
@@ -333,19 +342,19 @@ public class Automata extends DrawableObject {
 	return stateCounts[state];
     }
 
-    /**
-     * getCellCountForOnStates()
-     *
-     * @return the number of cells that are in an ON state.
-     **/
-    public int getCellCountForOnStates() {
-	int count = 0;
+    // /**
+    //  * getCellCountForOnStates()
+    //  *
+    //  * @return the number of cells that are in an ON state.
+    //  **/
+    // public int getCellCountForOnStates() {
+    // 	int count = 0;
 
-	for (int i=1; i<stateCounts.length; i++)
-	    count += stateCounts[i];
+    // 	for (int i=1; i<stateCounts.length; i++)
+    // 	    count += stateCounts[i];
 
-	return count;
-    }
+    // 	return count;
+    // }
 
     /**
      * getNhoodDensities(int)
@@ -531,6 +540,17 @@ public class Automata extends DrawableObject {
 	for (Cell[] row : cells)
 	    for (Cell c : row)
 		c.setCurrentState(0);
+    }
+
+    /**
+     * setColorOffset(int offset)
+     *
+     * adjust the color offset amount (changes the starting color point)
+     * */
+    public void setColorOffset(int offset) {
+	for (Cell[] row : cells)
+	    for (Cell c : row)
+		c.setColorOffset(offset);
     }
 
     public void render() {

@@ -37,6 +37,8 @@ public class Cell extends DrawableObject implements Comparable {
     // This is used for fading out, if "fadeOut" is turned on:
     private int offFor;
     private Color lastColor;
+    private int colorOffset = 0;
+
     
     // Cell's own reference as to its position in the automaton
     private int x, y;
@@ -97,7 +99,7 @@ public class Cell extends DrawableObject implements Comparable {
 	//	parent.colorMode(PApplet.HSB, 255, 255, 255, 255);
 	if (isAlive()) {
 	    offFor = 0;
-	    lastColor = new Color(constrain((state-1)*COLOR_UPDATE_AMOUNT, 0, 255),
+	    lastColor = new Color(constrain(colorOffset + (state-1)*COLOR_UPDATE_AMOUNT, 0, 255),
 	    			  255,
 	    			  255,
 	    			  255);
@@ -122,6 +124,16 @@ public class Cell extends DrawableObject implements Comparable {
 	    setColor(255, 255, 255, 0);
 	}
 	
+    }
+
+
+    /**
+     * setColorOffset(int offset)
+     *
+     * adjust the color offset amount (changes the starting color point)
+     * */
+    public void setColorOffset(int offset) {
+	this.colorOffset = offset;
     }
 
     /**
