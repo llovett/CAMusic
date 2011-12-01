@@ -43,7 +43,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
     // Use settings for exporting video?
     boolean exportVideo = false;
 
-    boolean fadeout = true;
+    boolean running = false;
     
     // private static final int ROWS = 200;
     // private static final int COLS = 200;
@@ -242,34 +242,6 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	forte = loadImage("img/forte.png");
 	clef = loadImage("img/bassclef.png");
 
-	// Use a Timer to update at arbitrary regular intervals.
-	ArrayList<Automata> lifeAuts = new ArrayList<Automata>();
-	lifeAuts.add(AutomataBass);
-	timerBass = new Timer();
-	UpdaterLifes = new CAUpdater(AutomataBass);
-	timerBass.schedule(UpdaterLifes,
-		       0L,
-		       UPDATE_INTERVAL_BASS);
-
-	lifeAuts.add(AutomataBassProc);	
-	timerProc = new Timer();
-	UpdaterProc = new CAUpdater(AutomataBassProc, new UpdateOperation() {
-		public void performOperation() {
-		    calculateFrameAndSend();
-		}
-	    });
-	timerProc.schedule(UpdaterProc,
-		       0L,
-		       UPDATE_INTERVAL_PROC);
-	
-	// Use a different timer for the contour automaton (create different
-	// update "tempi" this way)
-	timerCont = new Timer();
-	UpdaterContour = new CAUpdater(AutomataContour);
-	timerCont.schedule(UpdaterContour,
-			   0L,
-			   UPDATE_INTERVAL_CONTOUR);
-
 	smooth();
 
 	File initFile = new File("patts/life8");
@@ -297,9 +269,6 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	SoundPens.add(ProcPen);
 	SoundPens.add(ContPen);
 
-	OscMessage startMessage = new OscMessage("/startmsg");
-	startMessage.add(1);
-	osc.send(startMessage, toMax);
     }
 
     private Automata getAutomatonAtXY(int x, int y) {
@@ -410,7 +379,41 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    thePen.applyPen();
 	}
 	else if (msg.addrPattern().equals("/stopani")) {
-	    fadeout = !fadeout;
+	    // Check to see if we are running for the first time.
+	    // This code will execute the first time the button is pressed from the remote.
+	    if (! running && null == timerBass) {
+		// Construct timers and add updating each automaton to their schedules
+		timerBass = new Timer();
+		UpdaterLifes = new CAUpdater(AutomataBass);
+		timerBass.schedule(UpdaterLifes,
+				   0L,
+				   UPDATE_INTERVAL_BASS);
+
+		timerProc = new Timer();
+		UpdaterProc = new CAUpdater(AutomataBassProc, new UpdateOperation() {
+			public void performOperation() {
+			    calculateFrameAndSend();
+			}
+		    });
+		timerProc.schedule(UpdaterProc,
+				   0L,
+				   UPDATE_INTERVAL_PROC);
+	
+		timerCont = new Timer();
+		UpdaterContour = new CAUpdater(AutomataContour);
+		timerCont.schedule(UpdaterContour,
+				   0L,
+				   UPDATE_INTERVAL_CONTOUR);
+
+		OscMessage startMessage = new OscMessage("/startmsg");
+		startMessage.add(1);
+		osc.send(startMessage, toMax);
+	
+	    }
+
+	    // Flip our running state
+	    running = !running;
+
 	}
 	// else if (msg.addrPattern().equals("/penPos")) {	
     	//     // FORMAT =====
@@ -534,7 +537,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
      ******************/
 
     public void draw() {
-	if (fadeout) {
+	if (! running) {
 	    colorMode(RGB);
 	    fill(255, 255, 255, 15);
 	    rect(0, 0, WIDTH, HEIGHT);
@@ -670,7 +673,7 @@ public class CAMusic extends PApplet implements MouseWheelListener, KeyListener 
 	    float result = 0;
 	    for (int j = i; j < AutomataBass.getRows() && j - i < rowChunkSize; j++) {
 		int aliveCellCount = AutomataBass.getCellCountForOnStates(new Point(0, j), new Point(AutomataBass.getColumns()-1, j));
-		result += ( aliveCellCount / (float)AutomataBass.getColumns());
+		result += ( aliveCellCount / ((float)AutomataBass.getColumns() * rowChunkSize));
 	    }
 	    filtMsg.add(result);
 	}

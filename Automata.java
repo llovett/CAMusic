@@ -75,7 +75,6 @@ public class Automata extends DrawableObject {
 	setPos(x, y);
 
 	stateCounts = new int[rules.getMaxCellState()+1];
-	Arrays.fill(stateCounts, 0);
 	stateCounts[0] = rows*columns;
 
 	// Matrices are <rows><cols>
@@ -336,7 +335,7 @@ public class Automata extends DrawableObject {
      * @return the number of cells that are in state 'state'
      **/
     public int getCellCountForState(int state) {
-	if (state > stateCounts.length) return 0;
+	if (state >= stateCounts.length) return 0;
 	if (state < 0) return 0;
 
 	return stateCounts[state];
@@ -440,22 +439,26 @@ public class Automata extends DrawableObject {
 		case AutomataRules.CELL_AGE:
 		    //target.setAlive(true);
 		    int state = target.getState();
-		    stateCounts[state]--;
+		    if (state < stateCounts.length && state >= 0)
+			stateCounts[state]--;
 
 		    state++;
 		    
 		    target.setState(state);
-		    stateCounts[state]++;
+		    if (state < stateCounts.length && state >= 0)
+			stateCounts[state]++;
 		    break;
 		case AutomataRules.CELL_BIRTH:
 		    //		    target.setAlive(true);
 		    stateCounts[0]--;
-		    target.setState(1);    
+		    target.setState(1);
 		    stateCounts[1]++;
 		    break;
 		case AutomataRules.CELL_DEATH:
 		    //		    target.setAlive(false);
-		    stateCounts[target.getState()]--;
+		    state = target.getState();
+		    if (state < stateCounts.length && state >= 0)
+			stateCounts[state]--;
 		    target.setState(0);
 		    stateCounts[0]++;
 		    break;
@@ -473,7 +476,9 @@ public class Automata extends DrawableObject {
 		    // so that we can get a nice "spinning colors" effect,
 		    // we will reset to our first "on" state (i.e. 1)
 		    if (target.isAlive()) {
-			stateCounts[target.getState()]--;
+			state = target.getState();
+			if (state < stateCounts.length && state >= 0)
+			    stateCounts[state]--;
 			target.setState(1);
 			stateCounts[1]++;
 		    }
@@ -519,7 +524,6 @@ public class Automata extends DrawableObject {
 	//     //	    throw new Exception("state "+state+" is out of range of maximum state "+rules.getMaxCellState());
 	//     System.err.println("WARNING: STATE IS OUT OF RANGE : "+state+"; max is "+rules.getMaxCellState());
 	// }
-
 	
 	///////////////////////////////////////////////////////
 	// WARNING WARNING					 //
@@ -527,6 +531,10 @@ public class Automata extends DrawableObject {
 	// 	THIS IS some JJJAAANNNKKK SSSHHHIIITTT		 //
 	///////////////////////////////////////////////////////
 	
+	// Don't have time for buffer overflows right now!
+	// I have to deal with this later, for sure.
+	if (state >= stateCounts.length || state < 0)
+	    return;
 	
 	Cell c = cells[row][col];
 	stateCounts[c.getState()]--;
